@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./style.module.scss";
 import Header from "@/app/components/header/header";
 
-export default function Home() {
+export default function Websites() {
     return (
         <main className={styles.main}>
             <Header />
