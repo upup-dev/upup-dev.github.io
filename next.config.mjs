@@ -3,12 +3,11 @@
 //
 // export default nextConfig;
 const nextConfig = {
-    output: "export",
-    images: {
-        loader: "akamai",
-        path: "",
-    },
-    assetPrefix: "./",
-};
+    reactStrictMode: true,
 
-export default nextConfig;
+    // Add basePath
+    basePath: '/github-pages',
+
+}
+
+module.exports = nextConfig
