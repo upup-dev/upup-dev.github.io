@@ -33,12 +33,12 @@ const Navbar = () => {
     const [activeMenu, setActiveMenu] = useState(null);
     const caretDown = '/images/CaretDown.svg';
     console.log('activeMenu', activeMenu)
-    const handleMouseEnter = (id) => {
+    const handleMouseEnter = ({id}: { id: any }) => {
         setActiveMenu(id);
     };
 
     const handleMouseLeave = () => {
-        setActiveMenu(1);
+        setActiveMenu(null);
     };
 
     return (
@@ -46,7 +46,7 @@ const Navbar = () => {
                 {navigation.map((item) => (
                     <li className={`${styles.header_navbarItems} ${activeMenu == item.id ? styles.active : ''}`}
                         key={item.id}
-                        onMouseEnter={() => handleMouseEnter(item.id)}
+                        onMouseEnter={() => handleMouseEnter({id: item.id})}
                         onMouseLeave={handleMouseLeave}>
                         <Link href={item.path}>{item.title} {item.arrow &&
                             <Image src={caretDown} alt='v' width={16} height={16}/>}</Link>
