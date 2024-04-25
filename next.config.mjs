@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
-    images: {
-        domains: ['upup-dev.github.io'],
-    },
     output: "export",
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/upup.site-v2.0.github.io/' : '',
+    basePath: isProd ? '/upup.site-v2.0.github.io' : '',
+    assetPrefix: isProd ? '/upup.site-v2.0.github.io' : '',
 };
 
 export default nextConfig;
