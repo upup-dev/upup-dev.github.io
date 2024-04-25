@@ -4,9 +4,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 .h1{
   font-size: $title-small;
+  line-height: $title-small;
+  text-transform: uppercase;
 }
 .h1-big{
   font-size: $title-big;
+}
+.h3{
+  font-size: 30px;
 }
 .title-dark{
   color: $title-dark;

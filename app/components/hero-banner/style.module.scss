@@ -5,6 +5,9 @@
   display: flex;
   height: 100vh;
   padding-top: 80px;
+  min-height: 650px;
+  max-height: 1000px;
+  overflow: hidden;
   @include borderBottom;
   &_left{
     display: flex;
@@ -15,6 +18,12 @@
     @media(max-width: 1440px){
       padding-left: 40px;
     }
+  }
+  &_bgImages{
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+    height: calc(100vh - 80px);
   }
   &_right{
     position: relative;
@@ -30,15 +39,39 @@
       background: #C3CFED;
       mix-blend-mode: color;
     }
-    img{
-      position: relative;
-      z-index: 1;
-      object-fit: cover;
-      height: calc(100vh - 80px);
+    &Group{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      max-width: 272px;
+      background: $bg-dark;
+    }
+    &Vector{
+      //height: 53%;
+    }
+    &bottom{
+      padding: 25px;
+      h3, p{
+        color: $text-light-blue;
+        text-transform: uppercase;
+      }
+      h3{
+        font-size: 30px;
+        margin-bottom: 5px;
+
+      }
+      p{
+        font-size: 16px;
+      }
     }
   }
   &_title{
-    max-width: 715px;
+    max-width: 700px;
   }
   &_bottomBlock{
     display: flex;
@@ -47,7 +80,7 @@
     max-width: 507px;
   }
   &_text{
-    color: $test-gray;
+    color: $text-gray;
     font-size: 24px;
   }
 }

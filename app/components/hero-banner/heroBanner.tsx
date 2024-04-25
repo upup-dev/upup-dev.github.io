@@ -17,10 +17,18 @@ const HeroBanner = () => {
                     </div>
                 </div>
                 <div className={styles.heroBanner_right}>
-                    <Image src={'/images/picHeroBanner.jpg'} alt={'pic'} width={598} height={692}/>
+                    <div className={styles.heroBanner_rightGroup}>
+                        <div className={styles.heroBanner_rightVector}>
+                            <Image src={'/images/hero-vector-orange.svg'} alt={'vector'} width={272} height={378} priority/>
+                        </div>
+                        <div className={styles.heroBanner_rightbottom}>
+                            <h3>5 years</h3>
+                            <p>of finding excellent tech solutions to complex business problems</p>
+                        </div>
+                    </div>
+                    <Image className={styles.heroBanner_bgImages} src={'/images/picHeroBanner.jpg'} alt={'pic'} width={598} height={692} priority/>
                 </div>
             </div>
-
         </section>
 );
 }
