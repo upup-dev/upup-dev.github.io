@@ -2,7 +2,7 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-    output: "export",
+    // output: "export",
     basePath: isProd ? '/upup.site-v2.0.github.io' : '',
     assetPrefix: isProd ? '/upup.site-v2.0.github.io' : '',
 };
