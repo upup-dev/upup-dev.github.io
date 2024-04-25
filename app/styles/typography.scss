@@ -1,0 +1,16 @@
+@import "variables";
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'HelveticaNeueCyr-Heavy', sans-serif;
+}
+.h1{
+  font-size: $title-small;
+}
+.h1-big{
+  font-size: $title-big;
+}
+.title-dark{
+  color: $title-dark;
+}
+.title-white{
+  color: $title-white;
+}

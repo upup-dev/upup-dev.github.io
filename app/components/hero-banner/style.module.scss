@@ -1,0 +1,58 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.heroBanner{
+  display: flex;
+  height: 100vh;
+  padding-top: 80px;
+  @include borderBottom;
+  &_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 69px;
+    @media(max-width: 1440px){
+      padding-left: 40px;
+    }
+  }
+  &_right{
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      z-index: 2;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #C3CFED;
+      mix-blend-mode: color;
+    }
+    img{
+      position: relative;
+      z-index: 1;
+      object-fit: cover;
+      height: calc(100vh - 80px);
+    }
+  }
+  &_title{
+    max-width: 715px;
+  }
+  &_bottomBlock{
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+    max-width: 507px;
+  }
+  &_text{
+    color: $test-gray;
+    font-size: 24px;
+  }
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  @include container;
+}

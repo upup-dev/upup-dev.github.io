@@ -1,5 +1,8 @@
-@import '../../styles/mixins';
+@import '../../styles/variables';
 .header{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: 12px 40px 17px;
   border-bottom: 1px solid $border-color;
@@ -21,30 +24,6 @@
       @media screen and (max-width: 1024px) {
         width: 91px;
         height: 35px;
-      }
-    }
-  }
-  &_navbar{
-    display: inherit;
-    justify-content: inherit;
-    align-items: inherit;
-    list-style-type: none;
-    gap: 50px;
-    transition: .3s all;
-    @media screen and (max-width: 1200px) {
-      gap: 2.8vw;
-      font-size: 12px;
-    }
-    @media screen and (max-width: 1024px) {
-      display: none;
-    }
-    font-size: 16px;
-    li{
-      a{
-        display: inline-flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
       }
     }
   }

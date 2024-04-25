@@ -1,1 +1,12 @@
-$border-color: #C4C4C4;
+@import "variables";
+
+
+@mixin container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@mixin borderBottom {
+  border-bottom: 1px solid $border-color;
+}

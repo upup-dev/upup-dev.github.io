@@ -1,0 +1,109 @@
+@import '../../styles/mixins';
+.header{
+  position: relative;
+  &_navbar{
+    //position: relative;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    list-style-type: none;
+    gap: 50px;
+    transition: .3s all;
+    @media screen and (max-width: 1200px) {
+      gap: 2.8vw;
+      font-size: 12px;
+    }
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+    font-size: 16px;
+    li{
+      a{
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+  &_navbarItems{
+    //position: relative;
+  }
+  &_submenuWrapper{
+    position: absolute;
+    left: 0;
+    top: 80px;
+    z-index: 100;
+    background: #fff;
+    width: 100vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.5s ease;
+    }
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+    }
+  }
+  &_submenuContainer{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    padding: 40px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    list-style-type: none;
+  }
+  &_submenu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 60px;
+    grid-row-gap: 50px;
+    max-width: 520px;
+  }
+  &_submenuItemLink{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    span{
+      display: block;
+      width: 100%;
+    }
+  }
+  &_submenuItemTitle{
+    font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+    font-size: 16px;
+    color: #13141F;
+  }
+  &_submenuItemDescription{
+    font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+    font-size: 16px;
+    color: rgba(19, 20, 31, 0.62);
+  }
+  &_submenuPortfolio{
+    display: inline-flex;
+    justify-content: space-between;
+    max-width: 682px;
+    width: 100%;
+  }
+  &_submenuPortfolioItem{
+    position: relative;
+    align-self: flex-start;
+  }
+  &_submenuPortfolioName{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-family: 'HelveticaNeueCyr-Bold', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    z-index: 2;
+  }
+}
