@@ -3,10 +3,8 @@
 
 .heroBanner{
   display: flex;
-  height: 100vh;
+  height: 772px;
   padding-top: 80px;
-  min-height: 650px;
-  max-height: 1000px;
   overflow: hidden;
   @include borderBottom;
   &_left{
