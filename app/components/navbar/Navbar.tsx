@@ -2,92 +2,382 @@
 import styles from "./style.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import {useState} from "react";
+import {useEffect, useLayoutEffect, useRef, useState} from "react";
 
 const navigation = [
-    {id: 0, title: 'Industries', path: '/industries', arrow: true, submenu: [
-            {id: 0, title: 'UX/UI Design', description: 'Thoughtful design for satisfying user experience', path: '/ux-ui-design'},
-            {id: 1, title: 'UX/UI Design', description: 'Thoughtful design for satisfying user experience', path: '/ux-ui-design'},
-            {id: 2, title: 'UX/UI Design', description: 'Thoughtful design for satisfying user experience', path: '/ux-ui-design'},
-            // Додайте інші пункти тут
-        ]},
-    {id: 1, title: 'Services', path: '/services', arrow: true, submenu: [
-            {id: 0, title: 'UX/UI Design', description: 'Thoughtful design for satisfying user experience', path: '/ux-ui-design'},
-            {id: 1, title: 'Web Applications', description: 'To always be on a fingertip of your clients', path: '/ux-ui-design'},
-            {id: 2, title: 'Websites', description: 'Catching web representation of your business', path: '/ux-ui-design'},
-            {id: 3, title: 'Mobile Development', description: 'Biggest possible audience on your projects', path: '/ux-ui-design'},
-            {id: 4, title: 'Hosting & DevOps', description: 'Effortless deployment followed by happy dev team', path: '/ux-ui-design'},
-            // Додайте інші пункти тут
-        ]},
-    {id: 2, title: 'Mobile Development', path: '/industries', arrow: true, submenu: [
-            {id: 0, title: 'UX/UI Design', description: 'Thoughtful design for satisfying user experience', path: '/ux-ui-design'},
-            {id: 1, title: 'UX/UI Design', description: 'Thoughtful design for satisfying user experience', path: '/ux-ui-design'},
-            {id: 2, title: 'UX/UI Design', description: 'Thoughtful design for satisfying user experience', path: '/ux-ui-design'},
-            // Додайте інші пункти тут
-        ]},
+    {
+        id: 0, title: 'Industries', path: 'url', arrow: true, submenu: [
+            {
+                id: 0,
+                title: 'UX/UI Design',
+                description: 'Thoughtful design for satisfying user experience',
+                path: '/ux-ui-design'
+            },
+            {
+                id: 1,
+                title: 'UX/UI Design',
+                description: 'Thoughtful design for satisfying user experience',
+                path: '/ux-ui-design'
+            },
+            {
+                id: 2,
+                title: 'UX/UI Design',
+                description: 'Thoughtful design for satisfying user experience',
+                path: '/ux-ui-design'
+            },
+        ]
+    },
+    {
+        id: 1, title: 'Services', path: 'url', arrow: true, submenu: [
+            {
+                id: 0,
+                title: 'UX/UI Design',
+                description: 'Thoughtful design for satisfying user experience',
+                path: '/ux-ui-design'
+            },
+            {
+                id: 1,
+                title: 'Web Applications',
+                description: 'To always be on a fingertip of your clients',
+                path: '/ux-ui-design'
+            },
+            {
+                id: 2,
+                title: 'Websites',
+                description: 'Catching web representation of your business',
+                path: '/ux-ui-design'
+            },
+            {
+                id: 3,
+                title: 'Mobile Development',
+                description: 'Biggest possible audience on your projects',
+                path: '/ux-ui-design'
+            },
+            {
+                id: 4,
+                title: 'Hosting & DevOps',
+                description: 'Effortless deployment followed by happy dev team',
+                path: '/ux-ui-design'
+            },
+        ]
+    },
+    {
+        id: 2, title: 'Engagement Models', path: 'url', arrow: true, submenu: [
+            {
+                id: 0,
+                title: 'UX/UI Design',
+                description: 'Thoughtful design for satisfying user experience',
+                path: '/ux-ui-design'
+            },
+            {
+                id: 1,
+                title: 'UX/UI Design',
+                description: 'Thoughtful design for satisfying user experience',
+                path: '/ux-ui-design'
+            },
+            {
+                id: 2,
+                title: 'UX/UI Design',
+                description: 'Thoughtful design for satisfying user experience',
+                path: '/ux-ui-design'
+            },
+        ]
+    },
     {id: 3, title: 'Portfolio', path: '/portfolio', arrow: false},
     {id: 4, title: 'About Us', path: '/about-us', arrow: false},
 ];
 
 const Navbar = () => {
     const [activeMenu, setActiveMenu] = useState(null);
+    const [hoverMenu, setHoverMenu] = useState(false);
+    const [activeMenuSub, setActiveMenuSub] = useState(null);
+    const [hoverMenuSub, setHoverMenuSub] = useState(false);
+
+    const blockRef1 = useRef(null);
+    const blockRef2 = useRef(null);
+    const blockRef3 = useRef(null);
+    const targetRef = useRef(null);
+    const [activeBlock, setActiveBlock] = useState(1); // Стан для відстеження активного блоку
+    const [height, setHeight] = useState(0);
+
     const caretDown = '/images/CaretDown.svg';
-    console.log('activeMenu', activeMenu)
+
     const handleMouseEnter = ({id}: { id: any }) => {
+        setActiveBlock(id)
+        console.log('HOVER_ON')
         setActiveMenu(id);
+        setHoverMenu(true)
+    };
+    const handleMouseLeave = () => {
+        console.log('HOVER_OFF', hoverMenu)
+        setHoverMenu(false)
+        console.log('test', !hoverMenu && !hoverMenuSub, hoverMenuSub, hoverMenu)
+        if (!hoverMenu && !hoverMenuSub) {
+            setActiveMenuSub(null);
+            setActiveMenu(null);
+        }
+
     };
 
-    const handleMouseLeave = () => {
-        setActiveMenu(null);
+    const handleMouseEnterSub = () => {
+        console.log('HOVER_SUB_ON')
+        setHoverMenuSub(true)
+        setActiveMenuSub(activeMenu);
+
     };
+    const handleMouseLeaveSub = () => {
+        console.log('HOVER_SUB_OFF', hoverMenuSub)
+        setHoverMenuSub(false)
+        console.log('test2', !hoverMenu && !hoverMenuSub, hoverMenuSub, hoverMenu)
+
+        if(!hoverMenu && !hoverMenuSub) {
+            setActiveMenuSub(null);
+            setActiveMenu(null);
+        }
+    };
+
+    useEffect(() => {
+        if(!hoverMenuSub && !hoverMenu) {
+            handleMouseLeave()
+            handleMouseLeaveSub();
+        }
+
+    }, [hoverMenuSub, hoverMenu]);
+
+    useEffect(() => {
+        let height = 0;
+
+        // Визначаємо висоту залежно від активного блоку
+        switch (activeBlock) {
+            case 0:
+                if (blockRef1.current) {
+                    height = blockRef1.current.offsetHeight;
+                }
+                break;
+            case 1:
+                if (blockRef2.current) {
+                    height = blockRef2.current.offsetHeight;
+                }
+                break;
+            case 2:
+                if (blockRef3.current) {
+                    height = blockRef3.current.offsetHeight;
+                }
+                break;
+            default:
+                break;
+        }
+
+        setHeight(height); // Записуємо висоту активного блоку
+
+        if (targetRef.current) {
+            targetRef.current.style.height = `${height}px`; // Встановлюємо висоту для цільового блоку
+        }
+    }, [activeBlock]);
 
     return (
-            <ul className={styles.header_navbar}>
-                {navigation.map((item) => (
-                    <li className={`${styles.header_navbarItems} ${activeMenu == item.id ? styles.active : ''}`}
+        <div className={styles.header_navbarWrapper}>
+            <ul className={`${styles.header_navbar} ${styles.header_navbar1}`}>
+                {navigation.filter(item => item.submenu).map((item) => (
+                    <li
+                        className={`${styles.header_navbarItems} ${
+                            activeMenu === item.id ? styles.active : ""
+                        }`}
                         key={item.id}
                         onMouseEnter={() => handleMouseEnter({id: item.id})}
-                        onMouseLeave={handleMouseLeave}>
-                        <Link href={item.path}>{item.title} {item.arrow &&
-                            <Image src={caretDown} alt='v' width={16} height={16}/>}</Link>
-                        {item.submenu && item.id === activeMenu && (
-                            <div
-                                className={`${styles.header_submenuWrapper} ${activeMenu === item.id ? styles.show : styles.hide}`}>
-                                <div className={styles.header_submenuContainer}>
-                                    <ul className={styles.header_submenu}>
-                                        {item.submenu.map(sub => (
-                                            <li className={styles.header_submenuItem} key={sub.id}>
-                                                <Link className={styles.header_submenuItemLink} href={sub.path}>
-                                                    <span className={styles.header_submenuItemTitle}>{sub.title}</span>
-                                                    <span
-                                                        className={styles.header_submenuItemDescription}>{sub.description}</span>
-                                                </Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <div className={styles.header_submenuPortfolio}>
-                                        <div className={styles.header_submenuPortfolioItem}>
-                                            <Link href={'/'}>
-                                                <Image src='/images/portfolio-navbar-1.jpg' alt={'WebSite'}
-                                                       width={326} height={227} priority></Image>
-                                            </Link>
-                                            <div className={styles.header_submenuPortfolioName}>Website</div>
-                                        </div>
-                                        <div className={styles.header_submenuPortfolioItem}>
-                                            <Link href={'/'}>
-                                                <Image src='/images/portfolio-navbar-2.jpg' alt={'WebSite'}
-                                                       width={326} height={227} priority></Image>
-                                            </Link>
-                                            <div className={styles.header_submenuPortfolioName}>Web App</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        <Link href={{}}>
+                            {item.title} {item.arrow && <Image src={caretDown} alt="v" width={16} height={16}/>}
+                        </Link>
                     </li>
                 ))}
             </ul>
-    );
+            <ul className={`${styles.header_navbar} ${styles.header_navbar2}`}>
+                {navigation.filter(item => !item.submenu).map((item) => (
+                    <li
+                        className={`${styles.header_navbarItems} ${activeMenu === item.id ? styles.active : ""}`}
+                        key={item.id}
+                    >
+                        <Link href={item.path}>
+                            {item.title} {item.arrow &&
+                            <Image src="/images/CaretDown.svg" alt="v" width={16} height={16}/>}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+            <div ref={targetRef} className={`${styles.header_submenuWrapper} ${activeMenu === 0 || activeMenu === 1 || activeMenu === 2 ? styles.active : ""}`} style={{height: `${height}px`}}
+                 onMouseEnter={handleMouseEnterSub}
+                 onMouseLeave={handleMouseLeaveSub}>
+                <div ref={blockRef1} className={`${styles.header_submenuContainer} ${activeMenu === 0 ? styles.active : ""}`}>
+                    <ul className={styles.header_submenu}>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>UX/UI Design</span>
+                                <span className={styles.header_submenuItemDescription}>Thoughtful design for satisfying user experience</span>
+                            </Link>
+                        </li>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>Web Applications</span>
+                                <span className={styles.header_submenuItemDescription}>To always be on a fingertip of your clients</span>
+                            </Link>
+                        </li>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>Websites</span>
+                                <span className={styles.header_submenuItemDescription}>Catching web representation of your business</span>
+                            </Link>
+                        </li>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>Mobile Development</span>
+                                <span className={styles.header_submenuItemDescription}>Biggest possible audience on your projects</span>
+                            </Link>
+                        </li>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>Hosting & DevOps</span>
+                                <span className={styles.header_submenuItemDescription}>Effortless deployment followed by happy dev team</span>
+                            </Link>
+                        </li>
+
+                    </ul>
+                    <div className={styles.header_submenuPortfolio}>
+                        <div className={styles.header_submenuPortfolioItem}>
+                            <Link href={"/"}>
+                                <Image
+                                    src="/images/portfolio-navbar-1.jpg"
+                                    alt={"WebSite"}
+                                    width={326}
+                                    height={227}
+                                    priority
+                                />
+                            </Link>
+                            <div className={styles.header_submenuPortfolioName}>Website</div>
+                        </div>
+                        <div className={styles.header_submenuPortfolioItem}>
+                            <Link href={"/"}>
+                                <Image
+                                    src="/images/portfolio-navbar-2.jpg"
+                                    alt={"WebSite"}
+                                    width={326}
+                                    height={227}
+                                    priority
+                                />
+                            </Link>
+                            <div className={styles.header_submenuPortfolioName}>Web App</div>
+                        </div>
+                    </div>
+                </div>
+                <div ref={blockRef2} className={`${styles.header_submenuContainer} ${activeMenu === 1 ? styles.active : ""}`} >
+                    <ul className={styles.header_submenu}>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>UX/UI Design</span>
+                                <span className={styles.header_submenuItemDescription}>Thoughtful design for satisfying user experience</span>
+                            </Link>
+                        </li>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>Web Applications</span>
+                                <span className={styles.header_submenuItemDescription}>To always be on a fingertip of your clients</span>
+                            </Link>
+                        </li>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>Websites</span>
+                                <span className={styles.header_submenuItemDescription}>Catching web representation of your business</span>
+                            </Link>
+                        </li>
+
+                    </ul>
+                    <div className={styles.header_submenuPortfolio}>
+                        <div className={styles.header_submenuPortfolioItem}>
+                            <Link href={"/"}>
+                                <Image
+                                    src="/images/portfolio-navbar-1.jpg"
+                                    alt={"WebSite"}
+                                    width={326}
+                                    height={227}
+                                    priority
+                                />
+                            </Link>
+                            <div className={styles.header_submenuPortfolioName}>Website</div>
+                        </div>
+                        <div className={styles.header_submenuPortfolioItem}>
+                            <Link href={"/"}>
+                                <Image
+                                    src="/images/portfolio-navbar-2.jpg"
+                                    alt={"WebSite"}
+                                    width={326}
+                                    height={227}
+                                    priority
+                                />
+                            </Link>
+                            <div className={styles.header_submenuPortfolioName}>Web App</div>
+                        </div>
+                    </div>
+                </div>
+                <div ref={blockRef3} className={`${styles.header_submenuContainer} ${activeMenu === 2 ? styles.active : ""}`}>
+                    <ul className={styles.header_submenu}>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>UX/UI Design</span>
+                                <span className={styles.header_submenuItemDescription}>Thoughtful design for satisfying user experience</span>
+                            </Link>
+                        </li>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>Applications</span>
+                                <span className={styles.header_submenuItemDescription}>To always be on a fingertip of your clients</span>
+                            </Link>
+                        </li>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>Websites</span>
+                                <span className={styles.header_submenuItemDescription}>Catching web representation of your business</span>
+                            </Link>
+                        </li>
+                        <li className={styles.header_submenuItem}>
+                            <Link className={styles.header_submenuItemLink} href="/">
+                                <span className={styles.header_submenuItemTitle}>Development</span>
+                                <span className={styles.header_submenuItemDescription}>Biggest possible audience on your projects</span>
+                            </Link>
+                        </li>
+
+                    </ul>
+                    <div className={styles.header_submenuPortfolio}>
+                        <div className={styles.header_submenuPortfolioItem}>
+                            <Link href={"/"}>
+                                <Image
+                                    src="/images/portfolio-navbar-1.jpg"
+                                    alt={"WebSite"}
+                                    width={326}
+                                    height={227}
+                                    priority
+                                />
+                            </Link>
+                            <div className={styles.header_submenuPortfolioName}>Website</div>
+                        </div>
+                        <div className={styles.header_submenuPortfolioItem}>
+                            <Link href={"/"}>
+                                <Image
+                                    src="/images/portfolio-navbar-2.jpg"
+                                    alt={"WebSite"}
+                                    width={326}
+                                    height={227}
+                                    priority
+                                />
+                            </Link>
+                            <div className={styles.header_submenuPortfolioName}>Web App</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+        ;
 }
 
 export default Navbar;

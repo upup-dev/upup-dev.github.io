@@ -7,16 +7,22 @@
     justify-content: inherit;
     align-items: inherit;
     list-style-type: none;
-    gap: 50px;
+    //gap: 51px;
     transition: .3s all;
     @media screen and (max-width: 1200px) {
       gap: 2.8vw;
       font-size: 12px;
+      margin-left: 0;
     }
     @media screen and (max-width: 1024px) {
       display: none;
     }
     font-size: 16px;
+    &Wrapper{
+      display: flex;
+      gap: 51px;
+      margin-left: 38px;
+    }
     li{
       a{
         display: inline-flex;
@@ -26,44 +32,83 @@
       }
     }
   }
+  &_navbar2{
+    li{
+      &:first-of-type{
+        a{
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  &_navbar1{
+    li{
+      &:last-of-type{
+        a{
+          padding-right: 0;
+        }
+      }
+    }
+  }
   &_navbarItems{
-    //position: relative;
+    &>a{
+      padding: 31px 25px;
+      img{
+        transition: transform .5s ease-in-out;
+        transform-origin: 50% 50%;
+      }
+    }
+    &.active{
+      &>a{
+        img{
+          transform: rotate(540deg);
+        }
+      }
+    }
   }
   &_submenuWrapper{
     position: absolute;
     left: 0;
-    top: 80px;
-    z-index: 100;
+    top: 78px;
+    z-index: -1;
     background: #fff;
     width: 100vw;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
-    &.show {
+    overflow: hidden;
+    height: 0;
+    transition: all .2s ease-in-out;
+    //transform: translateY(-5px);
+    @include borderBottom;
+    border-top: 1px solid $border-color;;
+    &.active{
       opacity: 1;
       visibility: visible;
-      transition: opacity 0.5s ease;
-    }
-    &.hide {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+      z-index: 100;
+      transform: translateY(0);
     }
   }
   &_submenuContainer{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
     justify-items: center;
     padding: 40px;
     width: 100%;
     max-width: 1440px;
-    margin: 0 auto;
     list-style-type: none;
+    visibility: hidden;
+    &.active{
+      visibility: visible;
+    }
   }
   &_submenu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fill, 1fr);
     grid-column-gap: 60px;
     grid-row-gap: 50px;
     max-width: 520px;
@@ -86,6 +131,7 @@
     font-family: 'HelveticaNeueCyr-Roman', sans-serif;
     font-size: 16px;
     color: rgba(19, 20, 31, 0.62);
+    margin-top: 12px;
   }
   &_submenuPortfolio{
     display: inline-flex;

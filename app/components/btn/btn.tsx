@@ -12,8 +12,10 @@ interface Props {
 const Btn = ({name, color, white, fontSize }: Props) => {
     return (
         <div className={styles.btn}>
-            <Link className={`${styles.link} ${fontSize}`} style={{color: color}} href={'/'}>{name}</Link>
-            <Image src={white ? '/images/ArrowUpRight.svg' : '/images/ArrowUpRightDark.svg'} alt={'arrow'} width={36} height={36}/>
+            <Link className={`${styles.link} ${fontSize}`} style={{color: color}} href={'/'}>
+                <span>{name}</span>
+                <Image src={white ? '/images/ArrowUpRight.svg' : '/images/ArrowUpRightDark.svg'} alt={'arrow'} width={36} height={36}/>
+            </Link>
         </div>
     );
 }

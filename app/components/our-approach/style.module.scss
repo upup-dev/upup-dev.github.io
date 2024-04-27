@@ -1,0 +1,26 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.ourApproach{
+  padding-top: 100px;
+  padding-bottom: 142px;
+  &_container{
+    display: flex;
+    justify-content: space-between;
+    @include container;
+    padding: 0 40px;
+  }
+  &_leftBlock{
+    font-family: 'HelveticaNeueCyr-BoldItalic', sans-serif;
+    font-size: 18px;
+    color: $text-dark;
+  }
+  &_rightBlock{
+    max-width: 900px;
+  }
+  &_Text{
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 32px;
+    color: $text-dark;
+  }
+}

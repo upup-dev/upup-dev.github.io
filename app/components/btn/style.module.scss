@@ -6,6 +6,8 @@
   align-items: center;
   cursor: pointer;
   width: fit-content;
+  height: 36px;
+  margin-left: 4px;
   &:hover{
     &:before{
       width: 104%;
@@ -43,12 +45,16 @@
   img{
     position: relative;
     z-index: 1;
+    margin-left: 15px;
+    top: -1px;
   }
 }
 .link{
+  display: flex;
+  align-items: flex-end;
   position: relative;
   z-index: 1;
+  font-family: 'HelveticaNeueCyr-Medium', sans-serif;
   transition: .2s all;
-  top: 3px;
-  margin-right: 15px;
+  top: 1px;
 }

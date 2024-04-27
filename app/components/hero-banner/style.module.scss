@@ -4,7 +4,7 @@
 .heroBanner{
   display: flex;
   height: 772px;
-  padding-top: 80px;
+  padding-top: 79px;
   overflow: hidden;
   @include borderBottom;
   &_left{
@@ -13,15 +13,13 @@
     justify-content: space-between;
     padding-top: 80px;
     padding-bottom: 69px;
-    @media(max-width: 1440px){
-      padding-left: 40px;
-    }
+    padding-left: 40px;
   }
   &_bgImages{
     position: relative;
     z-index: 1;
     object-fit: cover;
-    height: calc(100vh - 80px);
+    height: 692px;
   }
   &_right{
     position: relative;
@@ -49,12 +47,10 @@
       max-width: 272px;
       background: $bg-dark;
     }
-    &Vector{
-      //height: 53%;
-    }
     &bottom{
-      padding: 25px;
+      padding: 21px 25px;
       h3, p{
+        font-family: 'HelveticaNeueCyr-Medium', sans-serif;
         color: $text-light-blue;
         text-transform: uppercase;
       }
@@ -78,8 +74,10 @@
     max-width: 507px;
   }
   &_text{
+    font-family: 'HelveticaNeueCyr-Medium', sans-serif;
     color: $text-gray;
     font-size: 24px;
+    line-height: normal;
   }
 }
 .container{
