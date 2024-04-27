@@ -93,10 +93,10 @@ const Navbar = () => {
     const [activeMenuSub, setActiveMenuSub] = useState(null);
     const [hoverMenuSub, setHoverMenuSub] = useState(false);
 
-    const blockRef1 = useRef(null);
-    const blockRef2 = useRef(null);
-    const blockRef3 = useRef(null);
-    const targetRef = useRef(null);
+    const blockRef1 = useRef<HTMLDivElement>(null);
+    const blockRef2 = useRef<HTMLDivElement>(null);
+    const blockRef3 = useRef<HTMLDivElement>(null);
+    const targetRef = useRef<HTMLDivElement>(null);
     const [activeBlock, setActiveBlock] = useState(1); // Стан для відстеження активного блоку
     const [height, setHeight] = useState(0);
 
@@ -142,7 +142,7 @@ const Navbar = () => {
             handleMouseLeaveSub();
         }
 
-    }, [hoverMenuSub, hoverMenu]);
+    }, [hoverMenuSub, hoverMenu, handleMouseLeave, handleMouseLeaveSub]);
 
     useEffect(() => {
         let height = 0;
