@@ -1,6 +1,28 @@
 @import '../../styles/mixins';
 .header{
-  position: relative;
+
+  //&_navbarbg{
+  //  position: fixed;
+  //  width: 100vw;
+  //  height: 100vh;
+  //  background: rgba(0,0,0,.5);
+  //  z-index: 7;
+  //  left: 0;
+  //  top: 0;
+  //}
+  &_navbarWrapperBg{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    //z-index: 5;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    &.active{
+      visibility: visible;
+    }
+  }
   &_navbar{
     //position: relative;
     display: inherit;
@@ -31,6 +53,10 @@
         justify-content: space-between;
         align-items: center;
         gap: 10px;
+        transition: color .15s ease-in-out;
+        &:hover{
+          color: rgba(0, 0, 0, 0.5);
+        }
       }
     }
   }
@@ -71,7 +97,7 @@
     &.active{
       &>a{
         img{
-          transform: rotate(540deg);
+          transform: rotateX(180deg);
         }
       }
     }
@@ -89,7 +115,7 @@
     height: 0;
     transition: all .2s ease-in-out;
     @include borderBottom;
-    border-top: 1px solid $border-color;;
+    border-top: 1px solid $border-color;
     &.active{
       opacity: 1;
       visibility: visible;
@@ -119,8 +145,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(auto-fill, 1fr);
-    grid-column-gap: 60px;
-    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+    grid-row-gap: 40px;
     max-width: 520px;
     @media screen and (max-width: 1265px) {
       grid-column-gap: 30px;
@@ -135,9 +161,37 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+    transition: .3s background-color;
+    padding: 9px 5px;
+    position: relative;
+    &:hover{
+      background: #F5F5F5;
+      &:before{
+        opacity: 1;
+      }
+      .header_submenuItemTitle{
+        transform: translateX(15px);
+      }
+    }
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      left: 6px;
+      top: 12px;
+      width: 8px;
+      height: 8px;
+      background-color: $bg-red;
+      opacity: 0;
+      transition: all .15s ease-in-out;;
+    }
     span{
       display: block;
       width: 100%;
+    }
+    .header_submenuItemTitle{
+      transition: transform .15s ease-in-out;
+      transform: translateX(0);
     }
   }
   &_submenuItemTitle{
@@ -166,7 +220,14 @@
   &_submenuPortfolioItem{
     position: relative;
     align-self: flex-start;
+    overflow: hidden;
+    &:hover{
+      img{
+        transform: scale(1.05);
+      }
+    }
     img{
+      transition: transform .15s ease-in-out;
       @media screen and (max-width: 1265px) {
         max-width: 280px;
         height: 200px;

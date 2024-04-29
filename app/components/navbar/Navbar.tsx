@@ -125,10 +125,13 @@ const Navbar = () => {
                     </li>
                 ))}
             </ul>
-            <div ref={targetRef} className={`${styles.header_submenuWrapper} ${activeMenu === 0 || activeMenu === 1 || activeMenu === 2 ? styles.active : ""}`} style={{height: `${height}px`}}
+            <div ref={targetRef}
+                 className={`${styles.header_submenuWrapper} ${activeMenu === 0 || activeMenu === 1 || activeMenu === 2 ? styles.active : ""}`}
+                 style={{height: `${height}px`}}
                  onMouseEnter={handleMouseEnterSub}
                  onMouseLeave={handleMouseLeaveSub}>
-                <div ref={blockRef1} className={`${styles.header_submenuContainer} ${activeMenu === 0 ? styles.active : ""}`}>
+                <div ref={blockRef1}
+                     className={`${styles.header_submenuContainer} ${activeMenu === 0 ? styles.active : ""}`}>
                     <ul className={styles.header_submenu}>
                         <li className={styles.header_submenuItem}>
                             <Link className={styles.header_submenuItemLink} href="/">
@@ -182,7 +185,8 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-                <div ref={blockRef2} className={`${styles.header_submenuContainer} ${activeMenu === 1 ? styles.active : ""}`} >
+                <div ref={blockRef2}
+                     className={`${styles.header_submenuContainer} ${activeMenu === 1 ? styles.active : ""}`}>
                     <ul className={styles.header_submenu}>
                         <li className={styles.header_submenuItem}>
                             <Link className={styles.header_submenuItemLink} href="/">
@@ -243,7 +247,8 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-                <div ref={blockRef3} className={`${styles.header_submenuContainer} ${activeMenu === 2 ? styles.active : ""}`}>
+                <div ref={blockRef3}
+                     className={`${styles.header_submenuContainer} ${activeMenu === 2 ? styles.active : ""}`}>
                     <ul className={styles.header_submenu}>
                         <li className={styles.header_submenuItem}>
                             <Link className={styles.header_submenuItemLink} href="/">
