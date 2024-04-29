@@ -309,6 +309,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+            <div className={`${styles.header_submenuWrapperBg} ${activeMenu === 0 || activeMenu === 1 || activeMenu === 2 ? styles.active : ""}`}></div>
         </div>
     )
         ;

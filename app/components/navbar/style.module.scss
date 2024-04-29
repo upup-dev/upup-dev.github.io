@@ -10,26 +10,25 @@
   //  left: 0;
   //  top: 0;
   //}
-  &_navbarWrapperBg{
+  &_submenuWrapperBg{
     position: absolute;
     width: 100vw;
     height: 100vh;
     background: rgba(0,0,0,.5);
-    //z-index: 5;
     left: 0;
-    top: 0;
+    top: 78px;
     visibility: hidden;
+    z-index: -1;
     &.active{
       visibility: visible;
+      z-index: 0;
     }
   }
   &_navbar{
-    //position: relative;
     display: inherit;
     justify-content: inherit;
     align-items: inherit;
     list-style-type: none;
-    //gap: 51px;
     transition: .3s all;
     @media screen and (max-width: 1200px) {
       font-size: 12px;
@@ -122,6 +121,7 @@
       z-index: 100;
       transform: translateY(0);
     }
+
   }
   &_submenuContainer{
     position: absolute;
