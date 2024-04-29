@@ -10,7 +10,6 @@
     //gap: 51px;
     transition: .3s all;
     @media screen and (max-width: 1200px) {
-      gap: 2.8vw;
       font-size: 12px;
       margin-left: 0;
     }
@@ -22,6 +21,9 @@
       display: flex;
       gap: 51px;
       margin-left: 38px;
+      @media screen and (max-width: 1210px) {
+        gap: 30px;
+      }
     }
     li{
       a{
@@ -39,6 +41,11 @@
           padding-left: 0;
         }
       }
+      a{
+        @media screen and (max-width: 1200px) {
+          line-height: 19px;
+        }
+      }
     }
   }
   &_navbar1{
@@ -53,6 +60,9 @@
   &_navbarItems{
     &>a{
       padding: 31px 25px;
+      @media screen and (max-width: 1210px) {
+        padding: 31px 15px;
+      }
       img{
         transition: transform .5s ease-in-out;
         transform-origin: 50% 50%;
@@ -78,7 +88,6 @@
     overflow: hidden;
     height: 0;
     transition: all .2s ease-in-out;
-    //transform: translateY(-5px);
     @include borderBottom;
     border-top: 1px solid $border-color;;
     &.active{
@@ -101,6 +110,7 @@
     max-width: 1440px;
     list-style-type: none;
     visibility: hidden;
+    gap: 15px;
     &.active{
       visibility: visible;
     }
@@ -112,6 +122,14 @@
     grid-column-gap: 60px;
     grid-row-gap: 50px;
     max-width: 520px;
+    @media screen and (max-width: 1265px) {
+      grid-column-gap: 30px;
+      grid-row-gap: 25px;
+    }
+    @media screen and (max-width: 1150px) {
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    }
   }
   &_submenuItemLink{
     display: flex;
@@ -138,10 +156,27 @@
     justify-content: space-between;
     max-width: 682px;
     width: 100%;
+    @media screen and (max-width: 1265px) {
+      max-width: 600px;
+    }
+    @media screen and (max-width: 1150px) {
+      max-width: 500px;
+    }
   }
   &_submenuPortfolioItem{
     position: relative;
     align-self: flex-start;
+    img{
+      @media screen and (max-width: 1265px) {
+        max-width: 280px;
+        height: 200px;
+        object-fit: cover;
+      }
+      @media screen and (max-width: 1150px) {
+        max-width: 240px;
+        height: 170px;
+      }
+    }
   }
   &_submenuPortfolioName{
     position: absolute;

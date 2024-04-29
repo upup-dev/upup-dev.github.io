@@ -7,6 +7,12 @@
   padding-top: 79px;
   overflow: hidden;
   @include borderBottom;
+  @media screen and (max-width: 1200px) {
+    padding-top: 82px;
+  }
+  @media screen and (max-width: 1024px) {
+    padding-top: 70px;
+  }
   &_left{
     display: flex;
     flex-direction: column;
@@ -20,6 +26,11 @@
     z-index: 1;
     object-fit: cover;
     height: 692px;
+    @media screen and (max-width: 1024px) {
+      height: 702px;
+      max-width: 50vw;
+    }
+
   }
   &_right{
     position: relative;
