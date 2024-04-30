@@ -1,12 +1,14 @@
-import Image from "next/image";
 import styles from "./style.module.scss";
 import Header from "@/app/components/header/header";
 
-export default function Websites() {
+export default function Page() {
     return (
         <main className={styles.main}>
             <Header />
-            <h1>Home Page</h1>
+            <section className={styles.sorry}>
+                <h1>WebSites </h1>
+                <p>Sorry, this page is not ready.</p>
+            </section>
         </main>
     );
 }
