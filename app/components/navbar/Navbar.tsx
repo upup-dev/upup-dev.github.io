@@ -9,7 +9,7 @@ const navigation = [
     {id: 1, title: 'Services', path: 'url', arrow: true, submenu: []},
     {id: 2, title: 'Engagement Models', path: 'url', arrow: true, submenu: []},
     {id: 3, title: 'Portfolio', path: '/portfolio', arrow: false},
-    {id: 4, title: 'About Us', path: '/about-us', arrow: false},
+    {id: 4, title: 'About Us', path: '/about', arrow: false},
 ];
 
 const Navbar = () => {
@@ -201,7 +201,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className={styles.header_submenuItem}>
-                            <Link className={styles.header_submenuItemLink} href="/">
+                            <Link className={styles.header_submenuItemLink} href="/services/websites">
                                 <span className={styles.header_submenuItemTitle}>Websites</span>
                                 <span className={styles.header_submenuItemDescription}>Catching web representation of your business</span>
                             </Link>

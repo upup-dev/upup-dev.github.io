@@ -1,0 +1,43 @@
+@import "mixins";
+@import "variables";
+@import "typography";
+.mob-menu{
+  @include borderBottom;
+  &_trigger {
+    background: transparent;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 16px;
+    align-items: center;
+    &:focus-visible {
+      outline: none;
+    }
+
+    .mob-menu_title {
+      font-family: 'HelveticaNeueCyr-Bold', sans-serif;
+      font-size: 18px;
+      color: $title-dark;
+    }
+  }
+  &_content{
+    ul{
+      li{
+        a{
+          font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+          font-size: 18px;
+          color: #6D6D74;
+          padding: 12px 16px;
+          display: block;
+        }
+        &:last-child{
+
+          a{
+            padding-bottom: 24px;
+          }
+        }
+      }
+    }
+  }
+}

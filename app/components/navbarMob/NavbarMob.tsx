@@ -1,6 +1,7 @@
 import styles from "./style.module.scss";
 import Link from "next/link";
-import {useState} from "react";
+import {Accordion, AccordionItem} from "@nextui-org/react";
+import Image from "next/image";
 
 const navigation = [
     {id: 0, title: 'Industries', path: '{}', arrow: true, submenu: [
@@ -29,27 +30,27 @@ const navigation = [
             {
                 id: 0,
                 title: 'UX/UI Design',
-                path: '/ux-ui-design'
+                path: '/services/websites'
             },
             {
                 id: 1,
                 title: 'Web Applications',
-                path: '/ux-ui-design'
+                path: '/services/websites'
             },
             {
                 id: 2,
-                title: 'Websites',
-                path: '/ux-ui-design'
+                title: 'WebSites',
+                path: '/services/websites'
             },
             {
                 id: 3,
                 title: 'Mobile Development',
-                path: '/ux-ui-design'
+                path: '/services/websites'
             },
             {
                 id: 4,
                 title: 'Hosting & DevOps',
-                path: '/ux-ui-design'
+                path: '//services/websites'
             },
         ]},
     {id: 2, title: 'Engagement Models', path: '{}', arrow: true, submenu: [
@@ -80,37 +81,86 @@ const navigation = [
             },
         ]},
     {id: 3, title: 'Portfolio', path: '/portfolio', arrow: false},
-    {id: 4, title: 'About Us', path: '/about-us', arrow: false},
+    {id: 4, title: 'About Us', path: '/about', arrow: false},
 ];
 
 const NavbarMob = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const arrowDown = '/images/ArrowDown.svg'
+    const arrowUp = '/images/ArrowUp.svg'
+    const itemClasses = {
+        base: "mob-menu",
+        title: "mob-menu_title",
+        trigger: "mob-menu_trigger",
+        indicator: "mob-menu_indicator",
+        content: "mob-menu_content",
+    };
+
     return (
         <nav className={styles.navbarMob}>
             <ul className={styles.navbarMob_items}>
-                <li className={styles.navbarMob_item}>
-                    Industries
-                    <ul className={styles.navbarMob_submenu}>
-                        <li className={styles.navbarMob_submenuItem}>
-                            <Link className={styles.navbarMob_submenuItemLink} href="/">Fintech</Link>
+                <Accordion
+                    showDivider={false}
+                    motionProps={{
+                    variants: {
+                        enter: {
+                            y: 0,
+                            opacity: 1,
+                            height: "auto",
+                            transition: {
+                                height: {
+                                    type: "spring",
+                                    stiffness: 500,
+                                    damping: 30,
+                                    duration: 1,
+                                },
+                                opacity: {
+                                    easings: "ease",
+                                    duration: 1,
+                                },
+                            },
+                        },
+                        exit: {
+                            y: -10,
+                            opacity: 0,
+                            height: 0,
+                            transition: {
+                                height: {
+                                    easings: "ease",
+                                    duration: 0.25,
+                                },
+                                opacity: {
+                                    easings: "ease",
+                                    duration: 0.3,
+                                },
+                            },
+                        },
+                    },
+                }}
+                           itemClasses={itemClasses}>
+                    {navigation.filter(item => item.submenu).map(({id, title, submenu}) => (
+                        <AccordionItem key={id} aria-label={title} title={title} indicator={({ isOpen }) => (!isOpen ? <Image src={arrowDown} alt='Arrow Down' width={24} height={24}/> : <Image src={arrowUp} alt='Arrow Up' width={24} height={24}/>)} >
+                            <ul className={styles.navbarMob_submenu}>
+                                {submenu?.map(({id, title, path}) => (
+                                    <li key={id} className={styles.navbarMob_submenuItem}>
+                                        <Link className={styles.navbarMob_submenuItemLink} href={path}>{title}</Link>
+                                    </li>
+                                ))}
+
+                            </ul>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+                <ul className={styles.navbarMob_mainMenu}>
+                    {navigation.filter(item => !item.submenu).map(({id, title, path}) => (
+                        <li key={id} className={styles.navbarMob_menuItem}>
+                            <Link className={styles.navbarMob_menuLink} href={path}>{title}</Link>
                         </li>
-                        <li className={styles.navbarMob_submenuItem}>
-                            <Link className={styles.navbarMob_submenuItemLink} href="/">Healthcare</Link>
-                        </li>
-                        <li className={styles.navbarMob_submenuItem}>
-                            <Link className={styles.navbarMob_submenuItemLink} href="/">Productivity</Link>
-                        </li>
-                        <li className={styles.navbarMob_submenuItem}>
-                            <Link className={styles.navbarMob_submenuItemLink} href="/">E-commerce</Link>
-                        </li>
-                    </ul>
-                </li>
-                <li className={styles.navbarMob_item}>Services</li>
-                <li className={styles.navbarMob_item}>Engagement Models</li>
-                <li className={styles.navbarMob_item}>Portfolio</li>
-                <li className={styles.navbarMob_item}>About Us</li>
+                    ))}
+                </ul>
             </ul>
-            <Link href={'/'}>Contacts</Link>
+            <div className={styles.navbarMob_btnwrap}>
+                <Link className={styles.navbarMob_btn} href={'/'}>Contacts <Image src='/images/PaperPlaneWhite.svg' alt='arrow' width={18} height={18} /></Link>
+            </div>
         </nav>
     );
 }

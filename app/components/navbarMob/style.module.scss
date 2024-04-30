@@ -1,4 +1,5 @@
 @import '../../styles/mixins';
+@import '../../styles/variables';
 
 .navbarMob {
   width: 100vw;
@@ -8,11 +9,45 @@
   left: 0;
   top: 65px;
   z-index: 100;
+  overflow-y: auto;
+  padding-bottom: 70px;
   &_item{
     font-family: 'HelveticaNeueCyr-Bold', sans-serif;
     font-size: 18px;
     color: $text-dark;
     padding: 16px 24px;
     @include borderBottom;
+  }
+  &_mainMenu{
+
+  }
+  &_menuItem{
+    @include borderBottom;
+  }
+  &_menuLink{
+    font-family: 'HelveticaNeueCyr-Bold', sans-serif;
+    font-size: 18px;
+    color: $title-dark;
+    padding: 24px 16px;
+    display: block;
+  }
+  &_btnwrap{
+    padding: 0 16px;
+  }
+  &_btn{
+    background-color: $bg-red;
+    color: white;
+    font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+    font-size: 16px;
+    padding: 20px 24px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    text-align: center;
+    margin: 30px auto 0;
   }
 }

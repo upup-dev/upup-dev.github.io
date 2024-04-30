@@ -6,7 +6,7 @@ export default function Page() {
         <main className={styles.main}>
             <Header />
             <section className={styles.sorry}>
-                <h1>About Us</h1>
+                <h1>Portfolio</h1>
                 <p>Sorry, this page is not ready.</p>
             </section>
         </main>

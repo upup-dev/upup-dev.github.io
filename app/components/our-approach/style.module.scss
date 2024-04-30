@@ -4,23 +4,47 @@
 .ourApproach{
   padding-top: 100px;
   padding-bottom: 142px;
+  @media screen and (max-width: 1024px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   &_container{
     display: flex;
     justify-content: space-between;
     @include container;
     padding: 0 40px;
+    @media screen and (max-width: 769px) {
+      flex-direction: column;
+      padding: 0 16px;
+    }
   }
   &_leftBlock{
     font-family: 'HelveticaNeueCyr-BoldItalic', sans-serif;
     font-size: 18px;
     color: $text-dark;
+    @media screen and (max-width: 769px) {
+      margin-bottom: 40px;
+    }
   }
   &_rightBlock{
     max-width: 900px;
+    @media screen and (max-width: 1200px) {
+      max-width: 70vw;
+    }
+    @media screen and (max-width: 769px) {
+      max-width: 100%;
+    }
+
   }
   &_Text{
     font-family: 'Inter-SemiBold', sans-serif;
     font-size: 32px;
     color: $text-dark;
+    @media screen and (max-width: 1200px) {
+      font-size: 28px;
+    }
+    @media screen and (max-width: 769px) {
+      font-size: 22px;
+    }
   }
 }
