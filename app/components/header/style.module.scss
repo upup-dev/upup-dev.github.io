@@ -104,9 +104,23 @@
         animation: transformMenuBtn .3s forwards;
       }
       &:before{
+        transform: rotate(-45deg) scale(1);
+        background-color: #13141F;
+        width: 2px;
+        height: 15px;
+        border-radius: 4px;
+        top: 2px;
+        left: -20px;
         animation: transformLineLeftInActive .3s .15s forwards;
       }
       &:after{
+        transform: rotate(45deg) scale(1);
+        background-color: #13141F;
+        width: 2px;
+        height: 15px;
+        border-radius: 4px;
+        top: 2px;
+        left: -20px;
         animation: transformLineLeftInActive .3s .15s forwards;
       }
     }
@@ -177,8 +191,6 @@
   100% {
     transform: rotate(0);
     background-color: $bg-red;
-    //top: 0;
-    //left: -15px;
     width: 12px;
     height: 12px;
     font-size: 18px;
