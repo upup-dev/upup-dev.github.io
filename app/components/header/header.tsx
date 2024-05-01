@@ -32,6 +32,7 @@ const Header = () => {
                     <Navbar/>
                 )}
                 <a className={styles.header_btn} href="/public"><span>Contacts</span> <Image
+                    className={styles.header_btnIcon}
                     src='/images/PaperPlane.svg'
                     alt='icon' width={18}
                     height={18}/></a>

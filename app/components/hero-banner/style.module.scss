@@ -107,6 +107,7 @@
         @media screen and (max-width: 768px) {
           font-size: 18px;
           margin-bottom: 5px;
+          letter-spacing: .6px;
         }
       }
       p{
@@ -119,7 +120,7 @@
     &Vector{
       @media screen and (max-width: 769px) {
         width: 100%;
-        height: 270px;
+        height: 237px;
         overflow: hidden;
       }
     }
@@ -127,7 +128,7 @@
   &_title{
     max-width: 700px;
     @media screen and (max-width: 768px) {
-      margin-bottom: 70px;
+      margin-bottom: 100px;
     }
   }
   &_bottomBlock{

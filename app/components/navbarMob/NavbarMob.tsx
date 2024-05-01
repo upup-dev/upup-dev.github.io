@@ -4,7 +4,7 @@ import {Accordion, AccordionItem} from "@nextui-org/react";
 import Image from "next/image";
 
 const navigation = [
-    {id: 0, title: 'Industries', path: '{}', arrow: true, submenu: [
+    {id: 0, title: 'Industries', path: '', arrow: true, submenu: [
             {
                 id: 0,
                 title: 'Fintech',
@@ -26,7 +26,7 @@ const navigation = [
                 path: '/ux-ui-design'
             }
         ]},
-    {id: 1, title: 'Services', path: '{}', arrow: true, submenu: [
+    {id: 1, title: 'Services', path: '', arrow: true, submenu: [
             {
                 id: 0,
                 title: 'UX/UI Design',
@@ -53,7 +53,7 @@ const navigation = [
                 path: '//services/websites'
             },
         ]},
-    {id: 2, title: 'Engagement Models', path: '{}', arrow: true, submenu: [
+    {id: 2, title: 'Engagement Models', path: '', arrow: true, submenu: [
             {
                 id: 0,
                 title: 'Dedicated Team',
@@ -138,7 +138,9 @@ const NavbarMob = () => {
                 }}
                            itemClasses={itemClasses}>
                     {navigation.filter(item => item.submenu).map(({id, title, submenu}) => (
-                        <AccordionItem key={id} aria-label={title} title={title} indicator={({ isOpen }) => (!isOpen ? <Image src={arrowDown} alt='Arrow Down' width={24} height={24}/> : <Image src={arrowUp} alt='Arrow Up' width={24} height={24}/>)} >
+                        <AccordionItem key={id} aria-label={title} title={title} indicator={({ isOpen }) => (!isOpen ?
+                            <span className={styles.arrowDown}><span></span></span> :
+                            <span className={styles.arrowUp}><span></span></span>)}>
                             <ul className={styles.navbarMob_submenu}>
                                 {submenu?.map(({id, title, path}) => (
                                     <li key={id} className={styles.navbarMob_submenuItem}>
