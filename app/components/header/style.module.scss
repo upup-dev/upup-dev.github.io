@@ -54,6 +54,10 @@
       display: none;
     }
   }
+  
+  &_btnIcon{
+    animation: spinner 10s cubic-bezier(.57,1.97,.87,.74) infinite;
+  }
 
   &_mobMenu{
     position: absolute;
@@ -227,5 +231,23 @@
     width: 12px;
     height: 12px;
     border-radius: 0;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  45%{
+    transform: rotate(120deg);
+  }
+  50% {
+    transform: rotate(240deg);
+  }
+  95% {
+    transform: rotate(240deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

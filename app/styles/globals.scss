@@ -9,7 +9,6 @@
 html,
 body {
   max-width: 100vw;
-  //overflow-x: hidden;
   font-family: 'HelveticaNeueCyr-Roman', sans-serif;
 }
 
@@ -31,6 +30,6 @@ li{
 
 @media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+    //color-scheme: dark;
   }
 }
