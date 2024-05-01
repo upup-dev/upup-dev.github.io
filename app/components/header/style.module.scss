@@ -90,9 +90,9 @@
     }
     &.active{
       &:before, &:after{
-        animation: transformMenuBtn .3s forwards;
+        //animation: transformMenuBtn .3s forwards;
         transition: all .3s;
-        transform-origin: 50% 50%;
+        //transform-origin: 50% 50%;
       }
       &:before{
         //transform: translateX(-3px) translateY(-1px);
@@ -105,8 +105,8 @@
     }
     &.inactive{
       &:before, &:after{
-        transition: all .3s;
-        animation: transformMenuBtn .3s forwards;
+        //transition: all .3s;
+        //animation: transformMenuBtn .3s forwards;
       }
       &:before{
         transform: rotate(-45deg) scale(1);
@@ -151,14 +151,14 @@
   0% {
     width: 2px;
     height: 15px;
-    transform: scale(1);
+    //transform: scale(1);
     background-color: $bg-red;
   }
   50% {
-    transform: scale(0);
+    //transform: scale(0);
   }
   100% {
-    transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) ;
     background-color: #13141F;
     width: 2px;
     height: 15px;
@@ -170,16 +170,16 @@
 
 @keyframes transformLineRight {
   0% {
-    transform: scale(1);
+    //transform: scale(1);
     width: 2px;
     height: 15px;
     background-color: $bg-red;
   }
   50% {
-    transform: scale(0);
+    //transform: scale(0);
   }
   100% {
-    transform: rotate(-45deg) scale(1);
+    transform: rotate(-45deg);
     background-color: #13141F;
     width: 2px;
     height: 15px;
