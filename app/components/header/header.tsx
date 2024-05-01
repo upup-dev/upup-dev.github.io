@@ -9,14 +9,19 @@ import {useState} from "react";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isActive, setIsActive] = useState('');
     const { width } = useWindowSize();
     const toggleMobMenu = () => {
         if(!isOpen) {
             setIsOpen(true);
+            setIsActive('active')
         } else {
             setIsOpen(false);
+            setIsActive('inactive')
         }
     }
+
+
     return (
         <header className={styles.header}>
             <div className={styles.header_wrapper}>
@@ -25,7 +30,7 @@ const Header = () => {
                 </Link>
                 {width && width < 1024 ? (
                         <>
-                            <button onClick={toggleMobMenu} className={styles.header_mobMenu}>Menu</button>
+                            <button onClick={toggleMobMenu} className={`${styles.header_mobMenu} ${styles[isActive]}`}>Menu</button>
                             {isOpen && <NavbarMob/>}
                         </>
                     ) : (

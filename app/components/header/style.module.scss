@@ -79,8 +79,139 @@
       height: 12px;
       background: $bg-red;
     }
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: -20px;
+      width: 12px;
+      height: 12px;
+      background: $bg-red;
+    }
+    &.active{
+      animation: transformMenuBtn .6s forwards;
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: -4px;
+        left: -20px;
+        width: 12px;
+        height: 12px;
+        background: $bg-red;
+        animation: transformLineRight .6s .3s forwards;
+      }
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: -4px;
+        left: -20px;
+        width: 12px;
+        height: 12px;
+        background: $bg-red;
+        animation: transformLineLeft .6s .3s forwards;
+      }
+    }
+    &.inactive{
+      font-size: 0;
+      animation: transformMenuBtnInActive .6s forwards;
+      &:before{
+        transform: rotate(45deg);
+        background-color: #13141F;
+        top: -4px;
+        left: -20px;
+        width: 2px;
+        height: 26px;
+        border-radius: 4px;
+        animation: transformLineLeftInActive .0s .3s forwards;
+      }
+      &:after{
+        transform: rotate(-45deg);
+        background-color: #13141F;
+        top: -4px;
+        left: -20px;
+        width: 2px;
+        height: 26px;
+        border-radius: 4px;
+        animation: transformLineLeftInActive .0s .3s forwards;
+      }
+    }
     @media screen and (max-width: 1024px) {
       display: block;
     }
+  }
+}
+
+@keyframes transformMenuBtn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+    font-size: 0;
+  }
+  100% {
+    transform: scale(1);
+    font-size: 0;
+  }
+}
+
+@keyframes transformMenuBtnInActive {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+    font-size: 0;
+  }
+  100% {
+    transform: scale(1);
+    font-size: 18px;
+  }
+}
+
+@keyframes transformLineLeft {
+  0% {
+    width: 2px;
+    height: 26px;
+  }
+  100% {
+    transform: rotate(45deg);
+    background-color: #13141F;
+    width: 2px;
+    height: 26px;
+    border-radius: 4px;
+  }
+}
+
+@keyframes transformLineRight {
+  0% {
+    width: 2px;
+    height: 26px;
+  }
+  100% {
+    transform: rotate(-45deg);
+    background-color: #13141F;
+    width: 2px;
+    height: 26px;
+    border-radius: 4px;
+  }
+}
+
+@keyframes transformLineLeftInActive {
+  0% {
+
+  }
+  100% {
+    transform: rotate(0);
+    background-color: $bg-red;
+    top: 2px;
+    left: -20px;
+    width: 12px;
+    height: 12px;
+    font-size: 18px;
+    border-radius: 0;
   }
 }
