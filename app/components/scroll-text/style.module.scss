@@ -13,6 +13,7 @@
       font-size: 22px;
     }
     span{
+      transition: opacity .5s;
       &:first-of-type{
         padding-left: 11vw;
       }

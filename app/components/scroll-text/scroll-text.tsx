@@ -45,7 +45,7 @@ const ScrollText = ({ text }: Props) => {
                     markers: false
                 },
                 opacity: 0.2,
-                stagger: 0.1
+                stagger: 0.1,
             });
         }
     }, []);
