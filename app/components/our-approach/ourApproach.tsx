@@ -1,6 +1,9 @@
 import styles from "./style.module.scss";
+import ScrollText from "@/app/components/scroll-text/scroll-text";
 
 const OurApproach = () => {
+    const text = 'Meet your the most devoted fan and business partner. Starting with profound understanding\n' +
+        '            of your goals, audience and problems you solve, we deliver solutions destined to grow your project.';
     return (
         <section className={styles.ourApproach}>
             <div className={styles.ourApproach_container}>
@@ -8,9 +11,10 @@ const OurApproach = () => {
                     Our Approach
                 </div>
                 <div className={styles.ourApproach_rightBlock}>
-                    <p className={styles.ourApproach_Text}>Meet your the most devoted fan and business partner. Starting with profound understanding of your goals, audience and problems you solve, we deliver solutions destined to grow your project.</p>
+                    <ScrollText text={text} />
                 </div>
             </div>
+
         </section>
     );
 }

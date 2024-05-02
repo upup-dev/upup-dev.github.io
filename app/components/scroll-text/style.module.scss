@@ -1,0 +1,29 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.split{
+  &_text{
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 32px;
+    color: $text-dark;
+    @media screen and (max-width: 1200px) {
+      font-size: 28px;
+    }
+    @media screen and (max-width: 769px) {
+      font-size: 22px;
+    }
+    span{
+      &:first-of-type{
+        padding-left: 11vw;
+      }
+    }
+  }
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  @include container;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
