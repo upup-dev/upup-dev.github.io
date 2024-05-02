@@ -2,7 +2,7 @@
 import styles from "./style.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import {useEffect, useRef, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 
 const navigation = [
     {id: 0, title: 'Industries', path: 'url', arrow: true, submenu: []},
@@ -32,28 +32,26 @@ const Navbar = () => {
         setActiveMenu(id);
         setHoverMenu(true)
     };
-    const handleMouseLeave = () => {
+    const handleMouseLeave = useCallback(() => {
         setHoverMenu(false)
         if (!hoverMenu && !hoverMenuSub) {
             setActiveMenuSub(null);
             setActiveMenu(null);
         }
-
-    };
-
+    }, [hoverMenu, hoverMenuSub]);
     const handleMouseEnterSub = () => {
         setHoverMenuSub(true)
         setActiveMenuSub(activeMenu);
 
     };
-    const handleMouseLeaveSub = () => {
+    const handleMouseLeaveSub = useCallback(() => {
         setHoverMenuSub(false)
 
         if(!hoverMenu && !hoverMenuSub) {
             setActiveMenuSub(null);
             setActiveMenu(null);
         }
-    };
+    }, [hoverMenu, hoverMenuSub]);
 
     useEffect(() => {
         if(!hoverMenuSub && !hoverMenu) {
@@ -61,7 +59,7 @@ const Navbar = () => {
             handleMouseLeaveSub();
         }
 
-    }, [hoverMenuSub, hoverMenu, handleMouseLeave, handleMouseLeaveSub]);
+    }, [hoverMenu, hoverMenuSub, handleMouseLeave, handleMouseLeaveSub]);
 
     useEffect(() => {
         let height = 0;
