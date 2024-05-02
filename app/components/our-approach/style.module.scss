@@ -37,15 +37,15 @@
     }
 
   }
-  &_Text{
-    font-family: 'Inter-SemiBold', sans-serif;
-    font-size: 32px;
-    color: $text-dark;
-    @media screen and (max-width: 1200px) {
-      font-size: 28px;
-    }
-    @media screen and (max-width: 769px) {
-      font-size: 22px;
-    }
-  }
+  //&_Text{
+  //  font-family: 'Inter-SemiBold', sans-serif;
+  //  font-size: 32px;
+  //  color: $text-dark;
+  //  @media screen and (max-width: 1200px) {
+  //    font-size: 28px;
+  //  }
+  //  @media screen and (max-width: 769px) {
+  //    font-size: 22px;
+  //  }
+  //}
 }

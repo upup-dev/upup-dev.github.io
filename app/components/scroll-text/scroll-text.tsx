@@ -3,7 +3,6 @@ import styles from "./style.module.scss";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import {string} from "prop-types";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,28 +14,39 @@ const ScrollText = ({ text }: Props) => {
     const container = useRef<HTMLParagraphElement>(null);
 
     useEffect(() => {
+        console.log('Init')
         if (container.current && container.current.textContent) {
-            const content = container.current.textContent;
-            const newContent = document.createDocumentFragment(); // Create a fragment to hold the new structure
+            console.log('Init 2')
+            container.current.classList.add('init-text');
+            const words = container.current.textContent.split(/\s+/); // Розділення тексту на слова
+            const newContent = document.createDocumentFragment();
 
-            Array.from(content).forEach(char => {
-                if (char !== ' ') { // Check if the character is not a space
-                    const span = document.createElement("span");
-                    span.textContent = char;
-                    span.style.display = "inline-block";
-                    newContent.appendChild(span);
-                } else {
-                    newContent.appendChild(document.createTextNode(char)); // Preserve spaces as text nodes
+            words.forEach((word, index) => {
+                const wordSpan = document.createElement("span"); // Створення span для кожного слова
+                wordSpan.style.display = "inline-block"; // Гарантія, що слова залишаються разом
+
+                Array.from(word).forEach(char => {
+                    const charSpan = document.createElement("span"); // Створення span для кожної букви
+                    charSpan.textContent = char;
+                    charSpan.style.display = "inline-block"; // Налаштування букв в лінію
+                    wordSpan.appendChild(charSpan);
+                });
+
+                newContent.appendChild(wordSpan);
+
+                // Додавання пробілу між словами, крім останнього слова
+                if (index < words.length - 1) {
+                    newContent.appendChild(document.createTextNode(' '));
                 }
             });
 
             container.current.innerHTML = "";
             container.current.appendChild(newContent);
 
-            // Select all spans inside the container to animate
-            const spans = container.current.querySelectorAll("span");
+            // Анімація для всіх char spans
+            const charSpans = container.current.querySelectorAll("span > span"); // Вибірка тільки внутрішніх span
 
-            gsap.from(spans, {
+            gsap.from(charSpans, {
                 scrollTrigger: {
                     trigger: container.current,
                     start: "top 85%",
@@ -48,7 +58,9 @@ const ScrollText = ({ text }: Props) => {
                 stagger: 0.1,
             });
         }
+        return () => console.log('Cleanup')
     }, []);
+
 
     return (
         <p ref={container} className={`${styles.split_text} reveal-type`}>{text}</p>

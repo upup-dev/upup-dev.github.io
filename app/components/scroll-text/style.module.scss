@@ -6,6 +6,15 @@
     font-family: 'Inter-SemiBold', sans-serif;
     font-size: 32px;
     color: $text-dark;
+    white-space: normal;
+    overflow: hidden;
+    opacity: .2;
+    transition: opacity 0.4s ease-in-out;
+    &:before{
+      content: '';
+      display: inline-block;
+      width: 11vw;
+    }
     @media screen and (max-width: 1200px) {
       font-size: 28px;
     }
@@ -14,6 +23,8 @@
     }
     span{
       transition: opacity .5s;
+    }
+    &>span{
       &:first-of-type{
         padding-left: 11vw;
       }

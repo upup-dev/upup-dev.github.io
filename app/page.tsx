@@ -8,9 +8,9 @@ const Home = () => {
   return (
     <main className={styles.main}>
         <Header />
-        <HeroBanner />
-        <OurApproach />
-        <Industries />
+            <HeroBanner />
+            <OurApproach />
+            <Industries />
     </main>
   );
 }
