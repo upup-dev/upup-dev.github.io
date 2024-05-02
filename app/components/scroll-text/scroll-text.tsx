@@ -1,70 +1,82 @@
 "use client";
-import styles from "./style.module.scss";
-import { useRef, useEffect } from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import styles from "./style.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
 type Props = {
     text: string;
-}
+};
 
 const ScrollText = ({ text }: Props) => {
     const container = useRef<HTMLParagraphElement>(null);
 
-    useEffect(() => {
-        console.log('Init')
-        if (container.current && container.current.textContent) {
-            console.log('Init 2')
-            container.current.classList.add('init-text');
-            const words = container.current.textContent.split(/\s+/); // Розділення тексту на слова
-            const newContent = document.createDocumentFragment();
+    useLayoutEffect(() => {
+        const element = container.current;
+        if (!element) return;
 
-            words.forEach((word, index) => {
-                const wordSpan = document.createElement("span"); // Створення span для кожного слова
-                wordSpan.style.display = "inline-block"; // Гарантія, що слова залишаються разом
+        // Очищення контейнера
+        element.innerHTML = '';
+        const words = text.split(/\s+/);
+        const newContent = document.createDocumentFragment();
+        container.current.classList.add('init-text');
 
-                Array.from(word).forEach(char => {
-                    const charSpan = document.createElement("span"); // Створення span для кожної букви
-                    charSpan.textContent = char;
-                    charSpan.style.display = "inline-block"; // Налаштування букв в лінію
-                    wordSpan.appendChild(charSpan);
-                });
+        words.forEach((word, index) => {
+            const wordSpan = document.createElement("span");
+            wordSpan.style.display = "inline-block";
 
-                newContent.appendChild(wordSpan);
+            word.split('').forEach(char => {
+                const charSpan = document.createElement("span");
+                charSpan.textContent = char;
+                charSpan.style.display = "inline-block";
+                charSpan.style.opacity = '0.2';
+                wordSpan.appendChild(charSpan);
+            });
 
-                // Додавання пробілу між словами, крім останнього слова
-                if (index < words.length - 1) {
-                    newContent.appendChild(document.createTextNode(' '));
+            newContent.appendChild(wordSpan);
+            if (index < words.length - 1) {
+                newContent.appendChild(document.createTextNode(' '));
+            }
+        });
+
+        element.appendChild(newContent);
+
+        // Створення спостерігача та визначення обсервера зовні
+        let observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    gsap.to(entry.target.querySelectorAll("span > span"), {
+                        opacity: 1,
+                        stagger: 0.1,
+                        ease: "power1.out",
+                        scrollTrigger: {
+                            trigger: entry.target,
+                            start: "top 85%",
+                            end: "top 43%",
+                            scrub: true,
+                        }
+                    });
+                    observer.unobserve(entry.target);
                 }
             });
+        }, { threshold: 0.1 });
 
-            container.current.innerHTML = "";
-            container.current.appendChild(newContent);
+        observer.observe(element);
 
-            // Анімація для всіх char spans
-            const charSpans = container.current.querySelectorAll("span > span"); // Вибірка тільки внутрішніх span
-
-            gsap.from(charSpans, {
-                scrollTrigger: {
-                    trigger: container.current,
-                    start: "top 85%",
-                    end: "top 35%",
-                    scrub: true,
-                    markers: false
-                },
-                opacity: 0.2,
-                stagger: 0.1,
-            });
-        }
-        return () => console.log('Cleanup')
-    }, []);
-
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            if (observer) {
+                observer.disconnect();  // Перевірка, чи визначено observer
+            }
+        };
+    }, [text]);
 
     return (
-        <p ref={container} className={`${styles.split_text} reveal-type`}>{text}</p>
+        <p ref={container} className={styles.split_text}>{text}</p>
     );
 };
 
 export default ScrollText;
+
