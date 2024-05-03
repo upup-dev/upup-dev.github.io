@@ -1,17 +1,12 @@
 import styles from "./style.module.scss";
-import Btn from "@/app/components/btn/btn";
-import Image from "next/image";
+import React from "react";
+import SliderIndustries from "@/app/components/sections/industries/slider-industries";
 
 const Industries = () => {
     return (
         <section className={styles.industries}>
             <div className={styles.container}>
-                <div>
-                    <h3>Industries</h3>
-                </div>
-                <div>
-
-                </div>
+                <SliderIndustries />
             </div>
         </section>
     );

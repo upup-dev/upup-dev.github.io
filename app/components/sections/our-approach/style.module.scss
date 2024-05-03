@@ -1,10 +1,9 @@
-@import '../../styles/mixins';
-@import '../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
 
 .ourApproach{
   padding-top: 100px;
   padding-bottom: 142px;
-  height: 200vh;
   @media screen and (max-width: 1024px) {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -35,17 +34,5 @@
     @media screen and (max-width: 769px) {
       max-width: 100%;
     }
-
   }
-  //&_Text{
-  //  font-family: 'Inter-SemiBold', sans-serif;
-  //  font-size: 32px;
-  //  color: $text-dark;
-  //  @media screen and (max-width: 1200px) {
-  //    font-size: 28px;
-  //  }
-  //  @media screen and (max-width: 769px) {
-  //    font-size: 22px;
-  //  }
-  //}
 }

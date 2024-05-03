@@ -32,9 +32,17 @@ li{
   width: 100vw;
   height: 100vh;
 }
+.swiper-slide {
+  transition: opacity 1s ease-in-out;
+}
+.swiper-slide-active {
+  opacity: 1;
+}
+.swiper-slide-next, .swiper-slide-prev {
+  opacity: 0;
+}
 .init-text{
   opacity: 1 !important;
-  //transition: opacity 0.5s ease-in-out !important;
   &:before{
     display: none !important;
   }

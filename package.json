@@ -12,11 +12,13 @@
     "@gsap/react": "^2.1.1",
     "@nextui-org/react": "^2.3.6",
     "@studio-freight/react-lenis": "^0.0.47",
+    "@types/swiper": "^6.0.0",
     "gsap": "^3.12.5",
     "next": "14.2.2",
     "react": "^18",
     "react-dom": "^18",
-    "split-type": "^0.3.4"
+    "split-type": "^0.3.4",
+    "swiper": "^11.1.1"
   },
   "devDependencies": {
     "@types/node": "^20",
