@@ -66,7 +66,7 @@ const AccordionIndustries = () => {
                         title={i.industriesName}
                         indicator={({isOpen}) => (!isOpen ? <Image src={imgDown} alt='down' width={21} height={21} /> : <Image src={imgUp} alt='up' width={21} height={21} />)}>
                         <div className='contant-wrapper'>
-                            <video width="100%" height="100%" preload="none" autoPlay={true} muted={true}>
+                            <video width="100%" height="100%" preload="none" controls={false} autoPlay={true} muted={true}>
                                 <source src={i.urlVideo}
                                         type="video/mp4"/>
                                 Your browser does not support the video tag.
