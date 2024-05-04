@@ -51,6 +51,9 @@
 .mob-industries{
   &[data-open="true"] {
     background-color: #262731;
+    .mob-industries_title{
+      color: #fff;
+    }
   }
   &_trigger{
     background: transparent;
@@ -71,6 +74,7 @@
       font-size: 32px;
       color: #363741;
       text-transform: uppercase;
+      transition: color .3s ease-in-out;
     }
   }
   &_content{
