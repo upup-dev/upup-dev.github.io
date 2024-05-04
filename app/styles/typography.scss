@@ -17,6 +17,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .h1-big{
   font-size: $title-big;
+  text-transform: uppercase;
+  @media screen and (max-width: 1024px){
+    font-size: 56px;
+  }
+  @media screen and (max-width: 768px){
+    font-size: 46px;
+  }
 }
 .h3{
   font-size: 30px;

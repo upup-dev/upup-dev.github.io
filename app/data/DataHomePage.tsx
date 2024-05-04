@@ -46,4 +46,31 @@ export const industriesSlider = [
         ]
     }
 
+];
+
+export const advantagesData = [
+    {
+        id: 0,
+        number: '50+',
+        title: 'Custom projects delivered',
+        description: 'Including such sensitive areas as health tech and fintech'
+    },
+    {
+        id: 1,
+        number: '96%',
+        title: 'Job success score of 16 clients',
+        description: 'Based on rating of our Upwork and Clutch projects in the latest 5 years'
+    },
+    {
+        id: 2,
+        number: '70%',
+        title: 'Long-term clients',
+        description: 'Most of clients stay with us for 3+ months and come back with new projects.'
+    },
+    {
+        id: 3,
+        number: '30+',
+        title: 'Active users',
+        description: 'In web and mobile applications, aligned with clients\' goals'
+    },
 ]
