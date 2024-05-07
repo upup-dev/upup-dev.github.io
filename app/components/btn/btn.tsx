@@ -12,11 +12,14 @@ interface Props {
 
 const Btn = ({name, color, white, fontSize, url }: Props) => {
     return (
-        <div className={styles.btn}>
-            <Link className={`${styles.link} ${fontSize}`} style={{color: color}} href={url}>
-                <span>{name}</span>
-                <Image src={white ? '/images/ArrowUpRight.svg' : '/images/ArrowUpRightDark.svg'} alt={'arrow'} width={36} height={36}/>
-            </Link>
+        <div className='btn-more'>
+            <div className={`${styles.btn}`}>
+                <Link className={`${styles.link} ${fontSize}`} style={{color: color}} href={url}>
+                    <span>{name}</span>
+                    <Image src={white ? '/images/ArrowUpRight.svg' : '/images/ArrowUpRightDark.svg'} alt={'arrow'}
+                           width={36} height={36}/>
+                </Link>
+            </div>
         </div>
     );
 }

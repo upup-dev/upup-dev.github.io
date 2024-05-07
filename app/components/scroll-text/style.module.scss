@@ -5,6 +5,9 @@
   &_text{
     font-family: 'Inter-SemiBold', sans-serif;
     font-size: 32px;
+    @media screen and (min-width: 1025px) {
+      line-height: 42px;
+    }
     color: $text-dark;
     white-space: normal;
     overflow: hidden;

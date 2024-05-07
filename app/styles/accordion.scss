@@ -2,7 +2,7 @@
 @import "variables";
 @import "typography";
 .mob-menu{
-  @include borderBottom;
+  @include borderBottom($border-color);
   &_trigger {
     background: transparent;
     border: none;

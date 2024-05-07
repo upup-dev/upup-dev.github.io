@@ -4,7 +4,7 @@
 .ourAdvantages{
   background-color: $bg-red;
   padding-top: $sectionTopBot;
-  padding-bottom: $sectionTopBot;
+  padding-bottom: $sectionTopBot + 8px;
   @media screen and (max-width: 769px) {
     padding-top: $sectionTopBot / 2;
     padding-bottom: $sectionTopBot / 2;
@@ -38,9 +38,9 @@
     }
   }
   &_block{
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
+    //display: flex;
+    //flex-direction: column;
+    //gap: 22px;
     width: 100%;
     max-width: 301px;
     color: $title-white;
@@ -53,13 +53,16 @@
   &_blockNumber{
     font-family: 'HelveticaNeueCyr-Bold', sans-serif;
     font-size: 44px;
+    margin-bottom: 24px;
   }
   &_blockTitle{
     width: 100%;
-    padding-bottom: 22px;
+    padding-bottom: 23px;
     border-bottom: 1px solid $title-white;
+    margin-bottom: 22px;
   }
   &_blockDescription{
+    line-height: 20px;
     @media screen and (max-width: 769px) {
       display: none;
     }

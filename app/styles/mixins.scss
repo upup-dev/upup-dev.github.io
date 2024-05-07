@@ -7,6 +7,9 @@
   margin: 0 auto;
 }
 
-@mixin borderBottom {
-  border-bottom: 1px solid $border-color;
+@mixin borderBottom($color) {
+  border-bottom: 1px solid $color;
+}
+@mixin borderTop($color) {
+  border-top: 1px solid $color;
 }

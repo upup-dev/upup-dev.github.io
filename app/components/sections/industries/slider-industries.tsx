@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 import { Swiper, SwiperSlide, SwiperClass } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 import {useEffect, useRef, useState} from 'react';
 import {EffectFade, Navigation, Pagination} from "swiper/modules";
 import Image from "next/image";

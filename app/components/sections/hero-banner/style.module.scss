@@ -3,10 +3,10 @@
 
 .heroBanner{
   display: flex;
-  height: 772px;
+  height: 770px;
   padding-top: 79px;
   overflow: hidden;
-  @include borderBottom;
+  @include borderBottom($border-color);
   @media screen and (max-width: 1200px) {
     padding-top: 82px;
   }

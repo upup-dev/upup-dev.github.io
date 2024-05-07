@@ -40,13 +40,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: self-start;
-    margin-top: 100px;
-    gap: 30px;
+    margin-top: 108px;
+    gap: 44px;
     overflow: hidden;
   }
   &_controlsWrapper{
     width: 100%;
-    padding: 50px 40px 210px;
+    padding:  50px 33px 214px 40px;
   }
   &_title{
     font-family: 'HelveticaNeueCyr-BoldItalic', sans-serif;
@@ -55,7 +55,7 @@
   }
   &_btn{
     display: flex;
-    gap: 21px;
+    gap: 23px;
     align-items: center;
     font-family: 'HelveticaNeueCyr-Heavy', sans-serif;
     font-size: 65px;
@@ -69,12 +69,17 @@
     @media screen and (max-width: 1285px) {
       font-size: 50px;
     }
+    img{
+      position: relative;
+      top: -8px;
+      left: 10px;
+    }
     &:hover{
       color: rgba(255, 255, 255, 0.45);
     }
     &.active{
       color: rgba(255, 255, 255, 1);
-      transform: translateX(0);
+      transform: translateX(-11px);
     }
   }
   &_swiperSlider{
@@ -91,7 +96,7 @@
     font-family: 'HelveticaNeueCyr-Medium', sans-serif;
     font-size: 24px;
     color: #fff;
-    margin-top: 31px;
+    margin-top: 27px;
   }
   &_swiperWrapTag{
     display: flex;
@@ -100,13 +105,15 @@
   }
   &_swiperTag a, &_swiperTagTitle{
     font-family: 'HelveticaNeueCyr-Roman', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 26px;
   }
   &_swiperTag{
     a{
       color: $text-upup;
       text-decoration: underline;
+      margin-top: -4px;
+      display: block;
     }
   }
   &_swiperTagTitle{
@@ -115,9 +122,9 @@
   &_btnMore{
     display: flex;
     justify-content: flex-end;
-    position: relative;
-    z-index: 1;
-    margin-top: 65px;
+    //position: relative;
+    //z-index: 1;
+    margin-top: 57px;
   }
 }
 .container{

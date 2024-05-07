@@ -16,13 +16,13 @@
     font-size: 18px;
     color: $text-dark;
     padding: 16px 24px;
-    @include borderBottom;
+    @include borderBottom($border-color);
   }
   &_mainMenu{
 
   }
   &_menuItem{
-    @include borderBottom;
+    @include borderBottom($border-color);
   }
   &_menuLink{
     font-family: 'HelveticaNeueCyr-Bold', sans-serif;

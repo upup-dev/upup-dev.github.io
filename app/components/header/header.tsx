@@ -36,11 +36,11 @@ const Header = () => {
                     ) : (
                     <Navbar/>
                 )}
-                <a className={styles.header_btn} href="/public"><span>Contacts</span> <Image
+                <Link className={styles.header_btn} href="/public"><span>Contact Us</span> <Image
                     className={styles.header_btnIcon}
                     src='/images/PaperPlane.svg'
                     alt='icon' width={18}
-                    height={18}/></a>
+                    height={18}/></Link>
             </div>
         </header>
     )
