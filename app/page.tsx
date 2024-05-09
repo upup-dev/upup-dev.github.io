@@ -5,6 +5,9 @@ import OurApproach from "@/app/components/sections/our-approach/ourApproach";
 import Industries from "@/app/components/sections/industries/industries";
 import OurAdvantages from "@/app/components/sections/our-advantages/ourAdvantages";
 import Services from "@/app/components/sections/services/services";
+import Feedback from "@/app/components/sections/feedback/feedback";
+import Teem from "@/app/components/sections/teem/teem";
+import CooperationModels from "@/app/components/sections/cooperation-model/cooperationModels";
 
 const Home = () => {
   return (
@@ -15,6 +18,9 @@ const Home = () => {
         <Industries />
         <OurAdvantages />
         <Services />
+        <Feedback />
+        <Teem />
+        <CooperationModels />
     </main>
   );
 }

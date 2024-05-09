@@ -3,7 +3,7 @@ export const industriesSlider = [
         id: 0,
         industriesName: 'Fintech',
         url: 'services/fintech',
-        urlVideo: 'https://d3vlq52qrgdnc2.cloudfront.net/bg-project-kinetik.mp4',
+        urlVideo: '/video/Video1.mp4',
         title: 'Prominent stability of the financial operations in your project.',
         tags: [
             { id: 0, nameLine: "Platform:", projectName: 'Kontent.ai',  url: '/Kontent.ai' },
@@ -112,3 +112,106 @@ export const servicesData = [
         urlBtn: '/services/website'
     }
 ];
+
+export const cooperationModelsData = [
+    {
+        id: 0,
+        tags: [
+            {
+                id: 0,
+                tagName: 'Full Dedication',
+            },
+            {
+                id: 1,
+                tagName: 'Team Flexibility',
+            },
+            {
+                id: 2,
+                tagName: 'Direct Management',
+            },
+        ],
+        modelsName: 'Dedicated Team',
+        modelDescription: 'Balanced team, ready to start implementing under your guidance. Perfect match for projects, which you want to have more influence',
+        url: '/dedicated-team',
+    },
+    {
+        id: 1,
+        tags: [
+            {
+                id: 0,
+                tagName: 'Cost Reduction',
+            },
+            {
+                id: 1,
+                tagName: 'Access to Experts',
+            },
+            {
+                id: 2,
+                tagName: 'Core Focus',
+            },
+        ],
+        modelsName: 'Outsourcing model',
+        modelDescription: 'Tell about your needs and let us do everything else. Care-free development where all management and tech job is done on our side',
+        url: '/outsourcing-model',
+    },
+    {
+        id: 2,
+        tags: [
+            {
+                id: 0,
+                tagName: 'Flexible Budgets',
+            },
+            {
+                id: 1,
+                tagName: 'Transparent Calculations',
+            },
+            {
+                id: 2,
+                tagName: 'Project Adaptability',
+            },
+        ],
+        modelsName: 'Time & Materials model',
+        modelDescription: 'Hourly paid professionals to cover your needs. Great for jobs, where you don\'t have a full-time workload',
+        url: '/time-materials',
+    },
+    {
+        id: 3,
+        tags: [
+            {
+                id: 0,
+                tagName: 'Budget Control',
+            },
+            {
+                id: 1,
+                tagName: 'No Overruns',
+            },
+            {
+                id: 2,
+                tagName: 'Fixed Deadlines',
+            },
+        ],
+        modelsName: 'Fixed price',
+        modelDescription: 'For projects with clearly defined scope and terms, where you can plan spendings from the very beginning',
+        url: '/time-materials',
+    },
+    {
+        id: 4,
+        tags: [
+            {
+                id: 0,
+                tagName: 'Staff Flexibility',
+            },
+            {
+                id: 1,
+                tagName: 'Resource Saving',
+            },
+            {
+                id: 2,
+                tagName: 'Direct Oversight',
+            },
+        ],
+        modelsName: 'Outstaffing model',
+        modelDescription: 'Get a professionals you lack in the team without need to search and hire them. Perfect for long-term collaboration where you don\'t need the whole team',
+        url: '/outstaffing-model',
+    }
+]

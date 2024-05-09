@@ -66,7 +66,7 @@ const SliderIndustries = () => {
                     {industriesSlider.map((i, index) => (
                         <SwiperSlide key={index}>
                             <div>
-                                <video width="100%" height="100%" preload="none" autoPlay={true} muted={true}>
+                                <video width="100%" height="100%" preload="none" loop={true} autoPlay={true} muted={true} >
                                     <source src={i.urlVideo}
                                             type="video/mp4"/>
                                     Your browser does not support the video tag.

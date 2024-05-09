@@ -1,0 +1,71 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.cooperation{
+  &_head{
+    padding: 131px 40px 48px;
+    background: $bg-lightBlue;
+    @media screen and (max-width: 769px){
+      padding: 80px 16px 30px;
+    }
+    &_title{
+      max-width: 858px;
+    }
+  }
+  &_headWrap{
+
+  }
+  &_containerHead{
+    display: flex;
+    justify-content: flex-end;
+    @include container;
+  }
+  &_bodyItem{
+    @include borderBottom($border-lightBlue);
+    &_container{
+      display: flex;
+      justify-content: space-between;
+      gap: 123px;
+      padding: 32px 40px 33px;
+      @include container;
+      transition: background-color .3s ease-in-out;
+      &:hover{
+        background: rgba(219, 229, 255, 0.6);
+      }
+    }
+  }
+  &_bodyTagWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 337px;
+  }
+
+  &_tag{
+    font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+    font-size: 14px;
+    color: $title-dark;
+    border: 1px solid $border-lightBlue;
+    padding: 8px 14px;
+    border-radius: 30px;
+  }
+  &_bodyNameWrapper{
+    max-width: 597px;
+    h4{
+      font-family: 'HelveticaNeueCyr-Bold', sans-serif;
+      font-size: 22px;
+      line-height: 22px;
+      color: $title-dark;
+      margin-bottom: 11px;
+    }
+    p{
+      font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      color: #656464;
+    }
+  }
+  &_bodyBtn{
+    max-width: 239px;
+  }
+}

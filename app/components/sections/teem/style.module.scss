@@ -1,0 +1,57 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.teem{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background: rgba(19, 20, 31, 0.7) url("/images/group-photo.jpg") no-repeat top left;
+  background-size: cover;
+  height: 739px;
+  padding-bottom: 48px;
+  @media screen and (max-width: 769px) {
+    padding-bottom: 39px;
+    height: 560px;
+  }
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 20, 31, 0.7);
+    z-index: 1;
+  }
+  &_container{
+    position: relative;
+    z-index: 1;
+    @include container;
+    padding: 0 40px;
+    @media screen and (max-width: 769px) {
+      flex-direction: column;
+      padding: 0 16px;
+    }
+  }
+  &_text{
+    font-family: 'HelveticaNeueCyr-Semi', sans-serif;
+    color: #fff;
+    font-size: 32px;
+    line-height: 42px;
+    max-width: 527px;
+    margin-bottom: 64px;
+    @media screen and (max-width: 769px) {
+      font-size: 22px;
+      line-height: 29px;
+      margin-bottom: 57px;
+      max-width: 262px;
+    }
+  }
+  &_wrapBtn{
+    width: 100%;
+    text-align: center;
+  }
+}

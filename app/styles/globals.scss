@@ -111,6 +111,21 @@ li{
   }
 }
 
+.teem{
+  .btn-more{
+    a {
+      span{
+        @media screen and (max-width: 769px) {
+          font-size: 18px;
+          line-height: 36px;
+          position: relative;
+          top: -1px;
+        }
+      }
+    }
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     //color-scheme: dark;
