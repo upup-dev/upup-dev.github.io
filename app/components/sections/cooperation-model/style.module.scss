@@ -25,12 +25,27 @@
     &_container{
       display: flex;
       justify-content: space-between;
-      gap: 123px;
-      padding: 32px 40px 33px;
+      gap: 118px;
+      overflow: hidden;
       @include container;
-      transition: background-color .3s ease-in-out;
+      transition: .21s background-color $transitionBtn;
       &:hover{
         background: rgba(219, 229, 255, 0.6);
+        .cooperation_tag{
+          border-color: #fff;
+        }
+        .cooperation_bodyBtn{
+          color: #fff;
+          svg{
+            transform: rotate(45deg);
+            path{
+              stroke: #fff;
+            }
+          }
+          &:before{
+            transform: translateX(0);
+          }
+        }
       }
     }
   }
@@ -38,19 +53,23 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    max-width: 337px;
+    max-width: 368px;
+    padding: 32px 0 33px 40px;
   }
 
   &_tag{
     font-family: 'HelveticaNeueCyr-Roman', sans-serif;
     font-size: 14px;
+    line-height: 34px;
     color: $title-dark;
     border: 1px solid $border-lightBlue;
-    padding: 8px 14px;
+    padding: 0 14px;
     border-radius: 30px;
+    transition: .2s border-color $transitionBtn;
   }
   &_bodyNameWrapper{
     max-width: 597px;
+    padding: 32px 0 33px;
     h4{
       font-family: 'HelveticaNeueCyr-Bold', sans-serif;
       font-size: 22px;
@@ -66,6 +85,42 @@
     }
   }
   &_bodyBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    padding: 32px 40px 33px;
     max-width: 239px;
+    //overflow: hidden;
+    position: relative;
+    font-size: 14px;
+    color: $title-dark;
+    text-transform: uppercase;
+    transition: .21s all $transitionBtn;
+    span, svg{
+      position: relative;
+      z-index: 1;
+      transition: .2s all $transitionBtn;
+    }
+    svg{
+      transform-origin: center;
+      transition: .41s all $transitionBtn;
+    }
+    span{
+      top: 2px;
+    }
+    &:before{
+      content: '';
+      display: block;
+      width: 105%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: .41s all $transitionBtn;
+      transform: translateX(100%);
+      background-color: $bg-red;
+    }
   }
 }
