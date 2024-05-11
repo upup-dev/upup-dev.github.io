@@ -33,15 +33,27 @@
       transition: .21s background-color $transitionBtn;
       &:hover{
         background: rgba(219, 229, 255, 0.6);
+        @media screen and (max-width: 769px){
+          background: transparent;
+        }
         .cooperation_tag{
           border-color: #fff;
+          @media screen and (max-width: 769px){
+            border-color: $border-lightBlue;
+          }
         }
         .cooperation_bodyBtn{
           color: #fff;
+          @media screen and (max-width: 769px){
+            color: $title-dark;
+          }
           svg{
             transform: rotate(45deg);
             path{
               stroke: #fff;
+              @media screen and (max-width: 769px){
+                stroke: #FF602E;
+              }
             }
           }
           &:before{
@@ -149,6 +161,9 @@
       transition: .41s all $transitionBtn;
       transform: translateX(100%);
       background-color: $bg-red;
+      @media screen and (max-width: 769px){
+        display: none;
+      }
     }
   }
 }

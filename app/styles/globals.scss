@@ -27,6 +27,9 @@ li{
 .font-32px{
   font-size: 32px;
 }
+.font-18px{
+  font-size: 18px;
+}
 .font-14px{
   font-size: 14px;
 }
@@ -114,11 +117,13 @@ li{
 .teem{
   .btn-more{
     a {
+      align-items: center;
       span{
+        position: relative;
+        top: 1px;
         @media screen and (max-width: 769px) {
           font-size: 18px;
           line-height: 36px;
-          position: relative;
           top: -1px;
         }
       }
