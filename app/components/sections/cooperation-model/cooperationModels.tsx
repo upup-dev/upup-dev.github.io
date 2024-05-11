@@ -1,9 +1,8 @@
 import styles from "./style.module.scss";
 import {cooperationModelsData} from "@/app/data/DataHomePage";
-import Image from "next/image";
 
 const CooperationModels = () => {
-    const iconColor = '#FF602E'
+    const iconColor = '#FF602E';
     return (
         <section className={styles.cooperation}>
             <div className={styles.cooperation_head}>
