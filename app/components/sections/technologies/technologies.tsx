@@ -23,6 +23,9 @@ const Technologies = ({data}: Props) => {
                 <div className={styles.technologies_air}>
 
                 </div>
+                <div className={styles.technologies_airLast}>
+
+                </div>
 
                 <a href={'/'} className={styles.technologies_btn}>
                     <span className={styles.technologies_btnTextTop}>
@@ -40,7 +43,7 @@ const Technologies = ({data}: Props) => {
                 </a>
             </div>
         </section>
-);
+    );
 }
 
 export default Technologies;

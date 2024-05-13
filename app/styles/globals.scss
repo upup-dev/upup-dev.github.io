@@ -137,6 +137,30 @@ li{
   .techBlock_n20, .techBlock_n21, .techBlock_n22{
     border-bottom: 1px solid #DBE5FF;
   }
+  .techBlock_n10{
+    &:after{
+      content: '';
+      display: block;
+
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .techBlock_n9, .techBlock_n10, .techBlock_n19{
+      display: none;
+    }
+    .techBlock_n4{
+      border-right: none;
+    }
+    .techBlock_n21, .techBlock_n22{
+      border-bottom: none;
+    }
+    .techBlock_n1, .techBlock_n5, .techBlock_n11, .techBlock_n15, .techBlock_n20, .techBlock_n22{
+      border-right: 1px solid #DBE5FF;
+    }
+    .techBlock_n18{
+      border-bottom: 1px solid #DBE5FF;
+    }
+  }
 }
 
 
