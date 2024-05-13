@@ -135,12 +135,20 @@ li{
     border-right: 1px solid #DBE5FF;
   }
   .techBlock_n20, .techBlock_n21, .techBlock_n22{
-    border-bottom: 1px solid #DBE5FF;
+    //border-bottom: 1px solid #DBE5FF;
   }
   .techBlock_n10{
+    position: relative;
     &:after{
       content: '';
       display: block;
+      position: absolute;
+      left: -30vw;
+      top: -1px;
+      width: 30vw;
+      height: 100%;
+      border-bottom: 1px solid #DBE5FF;
+      border-top: 1px solid #DBE5FF;
 
     }
   }
@@ -157,7 +165,7 @@ li{
     .techBlock_n1, .techBlock_n5, .techBlock_n11, .techBlock_n15, .techBlock_n20, .techBlock_n22{
       border-right: 1px solid #DBE5FF;
     }
-    .techBlock_n18{
+    .techBlock_n18, .techBlock_n20{
       border-bottom: 1px solid #DBE5FF;
     }
   }
