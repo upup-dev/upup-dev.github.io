@@ -8,6 +8,8 @@ import Services from "@/app/components/sections/services/services";
 import Feedback from "@/app/components/sections/feedback/feedback";
 import Teem from "@/app/components/sections/teem/teem";
 import CooperationModels from "@/app/components/sections/cooperation-model/cooperationModels";
+import Technologies from "@/app/components/sections/technologies/technologies";
+import {technologiesData} from "@/app/data/DataHomePage";
 
 const Home = () => {
   return (
@@ -21,6 +23,7 @@ const Home = () => {
         <Feedback />
         <Teem />
         <CooperationModels />
+        <Technologies data={technologiesData as [{ id: number; urlIcon: string; }]}/>
     </main>
   );
 }

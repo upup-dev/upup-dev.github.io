@@ -29,8 +29,8 @@ const CooperationModels = () => {
                         <div className={styles.cooperation_bodyBtn}>
                             <span>Learn more</span>
                             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7.875 28.125L25.875 10.125" stroke={iconColor} stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
-                                <path d="M12.375 9H27V23.625" stroke={iconColor} stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
+                                <path d="M7.875 28.125L25.875 10.125" stroke={iconColor} strokeWidth="3" strokeLinecap={'square'} strokeLinejoin="round"/>
+                                <path d="M12.375 9H27V23.625" stroke={iconColor} strokeWidth="3" strokeLinecap="square" strokeLinejoin="round"/>
                             </svg>
                         </div>
                     </a>

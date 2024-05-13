@@ -1,0 +1,121 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+.technologies{
+  padding-top: 140px;
+  padding-bottom: 150px;
+  &_container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(10, 140px);
+    grid-template-rows: repeat(4, 140px);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+  }
+  &_title {
+    grid-area: 1 / 1 / 3 / 6;
+    font-size: 52px;
+    text-transform: uppercase;
+    color: $title-dark;
+    padding: 35px 16px 16px 40px;
+    max-width: 617px;
+    text-align: right;
+    //text-align-last: left;
+    span{
+      display: block;
+    }
+    &Lastline{
+      display: block;
+      text-align: left;
+    }
+  }
+  &_btn {
+    grid-area: 4 / 8 / 5 / 11;
+    border: 1px solid #DBE5FF;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: .15s $transitionBtn;
+    &:after, &:before{
+      content: '';
+      display: block;
+      position: absolute;
+    }
+    &:before{
+      top: 50%;
+      left: -5%;
+      width: 110%;
+      height: 1px;
+      background-color: #DBE5FF;
+      transform: rotate(161.75deg);
+    }
+    //&:after{
+    //  width: 105%;
+    //  height: 100%;
+    //  background: $bg-red;
+    //  transform: translateX(100%);
+    //  transition: .3s $transitionBtn;
+    //  z-index: -1;
+    //}
+    &:hover{
+      background-color: $bg-red;
+      &:after{
+        //transform: translateX(0);
+      }
+      &:before{
+        background-color: $bg-red;
+        opacity: 0;
+      }
+      .technologies_btnTextTop, .technologies_btnText{
+        color: #fff;
+      }
+      .technologies_btnText{
+        svg{
+          transform: rotate(45deg);
+        }
+        path{
+          stroke: #fff;
+        }
+      }
+    }
+  }
+  &_btnText, &_btnTextTop{
+    transition: color .15s linear;
+  }
+  &_btnText{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $title-dark;
+    position: absolute;
+    right: 20px;
+    bottom: 18px;
+    svg{
+      transform-origin: center;
+      transition: 0.41s all $transitionBtn;
+    }
+  }
+  &_btnTextTop{
+    font-family: 'HelveticaNeueCyr-Bold', sans-serif;
+    font-size: 18px;
+    color: $title-dark;
+    position: absolute;
+    left: 20px;
+    top: 18px;
+  }
+  &_air {
+    grid-area: 4 / 1 / 5 / 5;
+    border-top: 1px solid #DBE5FF
+  }
+  &_techBlock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid #DBE5FF;
+    border-top: 1px solid #DBE5FF;
+  }
+}

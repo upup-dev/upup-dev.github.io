@@ -3,7 +3,7 @@ export const industriesSlider = [
         id: 0,
         industriesName: 'Fintech',
         url: 'services/fintech',
-        urlVideo: '/video/Video1.mp4',
+        urlVideo: '/video/Video1.1.mp4',
         title: 'Prominent stability of the financial operations in your project.',
         tags: [
             { id: 0, nameLine: "Platform:", projectName: 'Kontent.ai',  url: '/Kontent.ai' },
@@ -213,5 +213,100 @@ export const cooperationModelsData = [
         modelsName: 'Outstaffing model',
         modelDescription: 'Get a professionals you lack in the team without need to search and hire them. Perfect for long-term collaboration where you don\'t need the whole team',
         url: '/outstaffing-model',
+    }
+];
+
+export const technologiesData = [
+    {
+        id: 0,
+        urlIcon: '/images/technologies/figma.png',
+    },
+    {
+        id: 1,
+        urlIcon: '/images/technologies/next.png',
+    },
+    {
+        id: 2,
+        urlIcon: '/images/technologies/stripe.png',
+    },
+    {
+        id: 3,
+        urlIcon: '/images/technologies/wp.png',
+    },
+    {
+        id: 4,
+        urlIcon: '/images/technologies/life.png',
+    },
+    {
+        id: 5,
+        urlIcon: '/images/technologies/spring.png',
+    },
+    {
+        id: 6,
+        urlIcon: '/images/technologies/kotlin.png',
+    },
+    {
+        id: 7,
+        urlIcon: '/images/technologies/node.png',
+    },
+    {
+        id: 8,
+        urlIcon: '/images/technologies/github.png',
+    },
+    {
+        id: 9,
+        urlIcon: '/images/technologies/clear.png',
+    },
+    {
+        id: 10,
+        urlIcon: '/images/technologies/clear.png',
+    },
+    {
+        id: 11,
+        urlIcon: '/images/technologies/ts.png',
+    },
+    {
+        id: 12,
+        urlIcon: '/images/technologies/java.png',
+    },
+    {
+        id: 13,
+        urlIcon: '/images/technologies/aws.png',
+    },
+    {
+        id: 14,
+        urlIcon: '/images/technologies/docker.png',
+    },
+    {
+        id: 15,
+        urlIcon: '/images/technologies/react.png',
+    },
+    {
+        id: 16,
+        urlIcon: '/images/technologies/gitlab.png',
+    },
+    {
+        id: 17,
+        urlIcon: '/images/technologies/redux.png',
+    },
+    {
+        id: 18,
+        urlIcon: '/images/technologies/jenkins.png',
+    },
+    {
+        id: 19,
+        urlIcon: '/images/technologies/clear.png',
+    },
+    {
+        id: 20,
+        urlIcon: '/images/technologies/firebase.png',
+    },
+    {
+        id: 21,
+        urlIcon: '/images/technologies/apple.png',
+    },
+    {
+        id: 22,
+        urlIcon: '/images/technologies/android.png',
     }
 ]

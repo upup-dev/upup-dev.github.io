@@ -130,6 +130,15 @@ li{
     }
   }
 }
+.technologies{
+  .techBlock_n9, .techBlock_n4, .techBlock_n19{
+    border-right: 1px solid #DBE5FF;
+  }
+  .techBlock_n20, .techBlock_n21, .techBlock_n22{
+    border-bottom: 1px solid #DBE5FF;
+  }
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {
