@@ -4,23 +4,19 @@
 $border-color: rgba(255, 255, 255, .5);
 .testimonials{
   background-color: $bg-red;
-  padding-top: 64px;
-  //padding-bottom: $sectionTopBot + 8px;
+  padding-top: 65px;
+  overflow: hidden;
   @media screen and (max-width: 769px) {
     padding-top: $sectionTopBot / 2;
     padding-bottom: $sectionTopBot / 2;
   }
   &_container{
-    //@include container;
-    //padding: 0 40px;
-    @media screen and (max-width: 769px) {
-      //padding: 0 16px;
-    }
+
   }
   &_title{
     color: $title-white;
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 59px;
     @media screen and (max-width: 769px) {
       text-align: left;
     }
@@ -38,7 +34,6 @@ $border-color: rgba(255, 255, 255, .5);
   &_block{
     border-right: 1px solid $border-color;
     &:first-of-type{
-      //border-left: 1px solid #fff;
       .testimonials_item{
         &:first-of-type{
           &:before{
@@ -81,7 +76,6 @@ $border-color: rgba(255, 255, 255, .5);
       border-bottom: 1px solid $border-color;
       padding-top: 15px;
     }
-
   }
   &_info{
     color: $title-white;
