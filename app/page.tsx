@@ -10,6 +10,7 @@ import Teem from "@/app/components/sections/teem/teem";
 import CooperationModels from "@/app/components/sections/cooperation-model/cooperationModels";
 import Technologies from "@/app/components/sections/technologies/technologies";
 import {technologiesData} from "@/app/data/DataHomePage";
+import Testimonials from "@/app/components/sections/testimonials/testimonials";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
         <Teem />
         <CooperationModels />
         <Technologies data={technologiesData as [{ id: number; urlIcon: string; }]}/>
+        <Testimonials />
     </main>
   );
 }

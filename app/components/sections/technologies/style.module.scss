@@ -2,7 +2,7 @@
 @import '../../../styles/variables';
 
 .technologies{
-  padding-top: 140px;
+  padding-top: 141px;
   padding-bottom: 150px;
   @media screen and (max-width: 1024px) {
     padding-top: 35px;
@@ -11,13 +11,17 @@
   &_container{
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(10, 140px);
-    grid-template-rows: repeat(4, 140px);
+    grid-template-columns: repeat(10, 139px);
+    grid-template-rows: repeat(4, 139px);
     grid-column-gap: 0;
     grid-row-gap: 0;
 
+
     @media screen and (min-width: 1025px) {
       border-bottom: 1px solid #DBE5FF;
+      position: relative;
+      right: 32px;
+      width: 102%;
     }
     @media screen and (max-width: 1400px) {
       grid-template-columns: repeat(10, 120px);
@@ -29,8 +33,8 @@
       grid-template-rows: repeat(4, 100px);
     }
     @media screen and (max-width: 1024px) {
-      grid-template-columns: repeat(4, 140px);
-      grid-template-rows: repeat(10, 140px);
+      grid-template-columns: repeat(4, 139px);
+      grid-template-rows: repeat(10, 139px);
     }
     @media screen and (max-width: 560px) {
       grid-template-columns: repeat(4, 86px);
@@ -49,7 +53,7 @@
     font-size: 52px;
     text-transform: uppercase;
     color: $title-dark;
-    padding: 35px 16px 16px 40px;
+    padding: 37px 28px 16px 30px;
     max-width: 617px;
     text-align: right;
     //text-align-last: left;
@@ -195,8 +199,8 @@
     font-size: 18px;
     color: $title-dark;
     position: absolute;
-    left: 20px;
-    top: 18px;
+    left: 32px;
+    top: 31px;
   }
   &_air {
     grid-area: 4 / 1 / 5 / 5;

@@ -6,8 +6,8 @@ export const industriesSlider = [
         urlVideo: '/video/fintech_v3.mp4',
         title: 'Prominent stability of the financial operations in your project.',
         tags: [
-            { id: 0, nameLine: "Platform:", projectName: 'Kontent.ai',  url: '/Kontent.ai' },
-            { id: 1, nameLine: "Services:", projectName: 'Websites',  url: '/services/websites' },
+            {id: 0, nameLine: "Platform:", projectName: 'Kontent.ai', url: '/Kontent.ai'},
+            {id: 1, nameLine: "Services:", projectName: 'Websites', url: '/services/websites'},
         ]
     },
     {
@@ -17,9 +17,9 @@ export const industriesSlider = [
         urlVideo: 'https://d3vlq52qrgdnc2.cloudfront.net/bg-project-Mighty-Buildings.mp4',
         title: 'Extra layer of security and reliability in your health tech application.',
         tags: [
-            { id: 0, nameLine: "Platform:", projectName: 'Kontent.ai',  url: '/Kontent.ai' },
-            { id: 1, nameLine: "Services:", projectName: 'Websites',  url: '/services/websites' },
-            { id: 2, nameLine: "Industries:", projectName: 'Health',  url: '/Health' },
+            {id: 0, nameLine: "Platform:", projectName: 'Kontent.ai', url: '/Kontent.ai'},
+            {id: 1, nameLine: "Services:", projectName: 'Websites', url: '/services/websites'},
+            {id: 2, nameLine: "Industries:", projectName: 'Health', url: '/Health'},
         ]
     },
     {
@@ -29,8 +29,8 @@ export const industriesSlider = [
         urlVideo: 'https://d3vlq52qrgdnc2.cloudfront.net/bg-project-kinetik.mp4',
         title: 'Comfortable and safe environment for your clients\' mental health.',
         tags: [
-            { id: 0, nameLine: "Platform:", projectName: 'Kontent.ai',  url: '/' },
-            { id: 1, nameLine: "Services:", projectName: 'Websites',  url: '/' },
+            {id: 0, nameLine: "Platform:", projectName: 'Kontent.ai', url: '/'},
+            {id: 1, nameLine: "Services:", projectName: 'Websites', url: '/'},
         ]
     },
     {
@@ -40,9 +40,9 @@ export const industriesSlider = [
         urlVideo: 'https://d3vlq52qrgdnc2.cloudfront.net/bg-project-Mighty-Buildings.mp4',
         title: 'Care-free tech side of attracting new clients and retaining old ones.',
         tags: [
-            { id: 0, nameLine: "Platform:", projectName: 'Kontent.ai',  url: '/Kontent.ai' },
-            { id: 1, nameLine: "Services:", projectName: 'Websites',  url: '/Websites2' },
-            { id: 2, nameLine: "Industries:", projectName: 'Health',  url: '/Websites' },
+            {id: 0, nameLine: "Platform:", projectName: 'Kontent.ai', url: '/Kontent.ai'},
+            {id: 1, nameLine: "Services:", projectName: 'Websites', url: '/Websites2'},
+            {id: 2, nameLine: "Industries:", projectName: 'Health', url: '/Websites'},
         ]
     }
 
@@ -309,4 +309,49 @@ export const technologiesData = [
         id: 22,
         urlIcon: '/images/technologies/android.png',
     }
+];
+
+export const testimonialsData = [
+    {
+        id: 0,
+        avatar: '/images/avatar/Stive.png',
+        name: 'Steve Slavutsky',
+        position: 'CEO, CSI Works',
+        text: 'Alex has very good business and consumer culture understanding thus produces relevant pieces of art that help us close business. very good job! We continue to work with Alex and expand our requests.',
+    },
+    {
+        id: 1,
+        avatar: '/images/avatar/Serhiy.png',
+        name: 'Serhiy Boichun',
+        position: 'CEO, JayaDigital',
+        text: 'We were pleased with their client-centric approach and devotion to the project\'s success.',
+    },
+    {
+        id: 2,
+        avatar: '/images/avatar/Samanta.png',
+        name: 'Samantha K',
+        position: 'CEO, CSI Works',
+        text: 'The commitment from the UpUp team is unparalleled. They\'ve been with us every step of the way, from initial planning to execution, demonstrating an unwavering dedication to our long-term success.',
+    },
+    {
+        id: 3,
+        avatar: '/images/avatar/Michail.png',
+        name: 'Michael T',
+        position: 'Operations Director at GreenSolutions',
+        text: 'UpUp\'s deep industry insights have been invaluable to our operations. Their recommendations are always spot-on, helping us navigate the market with confidence and achieve a competitive edge.',
+    },
+    {
+        id: 4,
+        avatar: '/images/avatar/Oly2x.png',
+        name: 'Olga Yudina',
+        position: 'CEO, Mental Health Solutions Provider',
+        text: 'UpUp’s designs were well-documented and organized in Figma files, facilitating seamless handover and implementation by developers. The team was responsive, prompt, courteous, and professional throughout the project, and internal stakeholders praised the service provider\'s transparency and ability to consistently seek feedback and concerns.',
+    },
+    {
+        id: 5,
+        avatar: '/images/avatar/Daniel.png',
+        name: 'Daniel S',
+        position: 'Founder of FinTech Dynamics',
+        text: 'Our long-term partnership with UpUp has been instrumental in our sustained growth. They\'ve consistently provided innovative solutions that have kept us ahead of technological advancements and market trends',
+    },
 ]

@@ -5,14 +5,14 @@
     padding: 0 16px;
   }
   &_head{
-    padding: 131px 40px 48px;
+    padding: 133px 40px 49px;
     background: $bg-lightBlue;
     @media screen and (max-width: 769px){
       padding: 80px 16px 30px;
       margin: 0 -16px;
     }
     &_title{
-      max-width: 858px;
+      max-width: 940px;
     }
   }
   &_containerHead{
@@ -75,7 +75,7 @@
     align-self: center;
     gap: 8px;
 
-    padding: 32px 0 33px 40px;
+    padding: 23px 0 33px 40px;
     flex: 0 0 368px;
     @media screen and (max-width: 850px){
       flex: 0 0 250px;
@@ -91,16 +91,16 @@
   &_tag{
     font-family: 'HelveticaNeueCyr-Roman', sans-serif;
     font-size: 14px;
-    line-height: 34px;
+    line-height: 28px;
     color: $title-dark;
     border: 1px solid $border-lightBlue;
-    padding: 0 14px;
+    padding: 0 13px 0 14px;
     border-radius: 30px;
     transition: .2s border-color $transitionBtn;
   }
   &_bodyNameWrapper{
     max-width: 597px;
-    padding: 32px 0 33px;
+    padding: 32px 0 32px 14px;
     @media screen and (max-width: 769px){
       max-width: 100%;
       padding: 40px 0 0;
@@ -123,7 +123,7 @@
   &_bodyBtn{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 16px;
     width: 100%;
     padding: 32px 40px 33px;
@@ -148,7 +148,9 @@
       transition: .41s all $transitionBtn;
     }
     span{
-      top: 2px;
+      top: 3px;
+      left: 0;
+      letter-spacing: 0.15px;
     }
     &:before{
       content: '';

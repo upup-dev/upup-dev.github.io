@@ -1,0 +1,106 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+$border-color: rgba(255, 255, 255, .5);
+.testimonials{
+  background-color: $bg-red;
+  padding-top: 64px;
+  //padding-bottom: $sectionTopBot + 8px;
+  @media screen and (max-width: 769px) {
+    padding-top: $sectionTopBot / 2;
+    padding-bottom: $sectionTopBot / 2;
+  }
+  &_container{
+    //@include container;
+    //padding: 0 40px;
+    @media screen and (max-width: 769px) {
+      //padding: 0 16px;
+    }
+  }
+  &_title{
+    color: $title-white;
+    text-align: center;
+    margin-bottom: 64px;
+    @media screen and (max-width: 769px) {
+      text-align: left;
+    }
+  }
+  &_blocks{
+    display: grid;
+    grid-template-columns: repeat(3, 484px);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    justify-content: center;
+    border-top: 1px solid $border-color;
+  }
+
+  &_block{
+    border-right: 1px solid $border-color;
+    &:first-of-type{
+      //border-left: 1px solid #fff;
+      .testimonials_item{
+        &:first-of-type{
+          &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: -100%;
+            border-bottom: 1px solid $border-color;
+          }
+        }
+      }
+    }
+    &:last-of-type{
+      border-right: none;
+      .testimonials_item{
+        &:first-of-type{
+          &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: -100%;
+            border-bottom: 1px solid $border-color;
+          }
+        }
+      }
+    }
+  }
+  &_item{
+    display: flex;
+    gap: 16px;
+    padding: 32px;
+    position: relative;
+    &:first-of-type{
+      border-bottom: 1px solid $border-color;
+      padding-top: 15px;
+    }
+
+  }
+  &_info{
+    color: $title-white;
+  }
+  &_name, &_position{
+    font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+  }
+  &_name{
+    font-size: 18px;
+    margin-bottom: 8px;
+    margin-top: 17px;
+  }
+  &_position{
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+  &_text{
+    font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
