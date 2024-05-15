@@ -11,6 +11,7 @@ import CooperationModels from "@/app/components/sections/cooperation-model/coope
 import Technologies from "@/app/components/sections/technologies/technologies";
 import {technologiesData} from "@/app/data/DataHomePage";
 import Testimonials from "@/app/components/sections/testimonials/testimonials";
+import Contact from "@/app/components/sections/contact/contact";
 
 const Home = () => {
   return (
@@ -26,6 +27,7 @@ const Home = () => {
         <CooperationModels />
         <Technologies data={technologiesData as [{ id: number; urlIcon: string; }]}/>
         <Testimonials />
+        <Contact />
     </main>
   );
 }

@@ -1,0 +1,192 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.heroBanner{
+  display: flex;
+
+  height: 692px;
+  margin-top: 140px;
+  margin-bottom: 140px;
+  overflow: hidden;
+  //@include borderBottom($border-color);
+  @media screen and (max-width: 1200px) {
+    padding-top: 82px;
+  }
+  @media screen and (max-width: 1024px) {
+    padding-top: 65px;
+  }
+  @media screen and (max-width: 768px) {
+    overflow: visible;
+    height: auto;
+  }
+  &_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    //padding-top: 80px;
+    //padding-bottom: 69px;
+    //padding-left: 40px;
+    width: 100%;
+    @media screen and (max-width: 768px) {
+      padding: 40px 16px 40px;
+    }
+
+  }
+  &_bgImages{
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+    height: 692px;
+    @media screen and (max-width: 1024px) {
+      height: 706px;
+      max-width: 50vw;
+    }
+    @media screen and (max-width: 769px) {
+      height: 394px;
+      max-width: 55vw;
+      margin-left: auto;
+      display: block;
+    }
+
+  }
+  &_right{
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      z-index: 2;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #C3CFED;
+      mix-blend-mode: color;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      display: block;
+      top: -15vw;
+      left: 0;
+      width: 100%;
+      height: 130vw;
+      border-right: 1px solid #C3CFED;
+    }
+    &Group{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      max-width: 272px;
+      background: $bg-dark;
+      //overflow: hidden;
+      @media screen and (max-width: 991px) {
+        max-width: 230px;
+      }
+      @media screen and (max-width: 769px) {
+        max-width: 45vw;
+      }
+      img{
+        @media screen and (max-width: 991px) {
+          width: 100%;
+          height: fit-content;
+          max-width: 230px;
+        }
+        @media screen and (max-width: 769px) {
+          //position: absolute;
+          max-width: 55vw;
+          //height: 394px;
+        }
+      }
+    }
+    &bottom{
+      padding: 21px 25px;
+      @media screen and (max-width: 768px) {
+        padding: 15px;
+      }
+      h3, p{
+        font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+        color: $text-light-blue;
+        text-transform: uppercase;
+      }
+      h3{
+        font-size: 30px;
+        margin-bottom: 5px;
+        @media screen and (max-width: 768px) {
+          font-size: 18px;
+          margin-bottom: 5px;
+          letter-spacing: .6px;
+        }
+      }
+      p{
+        font-size: 16px;
+        @media screen and (max-width: 768px) {
+          font-size: 10px;
+        }
+      }
+    }
+    &Vector{
+      @media screen and (max-width: 769px) {
+        width: 100%;
+        height: 237px;
+        overflow: hidden;
+      }
+    }
+  }
+  &_title{
+    max-width: 700px;
+    font-size: 50px;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 100px;
+    }
+  }
+  &_bottomBlock{
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+    max-width: 507px;
+    @media screen and (max-width: 768px) {
+      gap: 24px;
+    }
+  }
+  &_text{
+    font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+    color: $text-gray;
+    font-size: 24px;
+    line-height: normal;
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  gap: 68px;
+  @include container;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.contact{
+  &_infoList{
+    color: $text-light-blue;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    li{
+      display: flex;
+      gap: 5px;
+      &:last-of-type{
+        flex-direction: column;
+        margin-left: 18px;
+      }
+    }
+  }
+}
