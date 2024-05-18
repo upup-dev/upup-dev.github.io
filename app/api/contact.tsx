@@ -44,15 +44,15 @@ const handleFormSubmission = async (req: express.Request) => {
 
         const mailOptions = {
             from: 'your-email@gmail.com',
-            to: email as string,
+            to: Array.isArray(email) ? email.join(',') : email,
             subject: 'Form Submission',
             text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-            attachments: [
-                {
-                    filename: attachment?.originalFilename,
-                    path: attachment?.filepath
-                }
-            ].filter(att => att.filename && att.path) // Filter out undefined values
+            attachments: attachment
+                ? [{
+                    filename: attachment.originalFilename || undefined,
+                    path: attachment.filepath
+                }]
+                : []
         };
 
         const info = await transporter.sendMail(mailOptions);
