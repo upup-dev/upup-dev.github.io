@@ -13,7 +13,7 @@ const HeroBanner = () => {
                     <div className={styles.heroBanner_bottomBlock}>
                         <p className={styles.heroBanner_text}>Exceeding expectation in every aspect, from communication
                             to delivery</p>
-                        <Btn name={'LET’S TALK'} color={'#13141F'} white={true} fontSize={'font-32px'} url={'/contact-us'}/>
+                        <Btn name={'LET’S TALK'} color={'#13141F'} white={true} fontSize={'font-32px'} url={'/contact-us'} type={'link'}/>
                     </div>
                 </div>
                 <div className={styles.heroBanner_right}>

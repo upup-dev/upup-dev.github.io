@@ -1,0 +1,49 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.contactForm {
+  margin-top: 44px;
+  margin-bottom: 104px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 60px;
+  }
+  input, textarea{
+    width: 100%;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #9D9D9D;
+    line-height: 30px;
+    margin-bottom: 43px;
+    font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+    font-size: 18px;
+    &::placeholder {}
+    outline: none;
+    padding: 10px 0;
+  }
+  textarea{
+    resize: none;
+    overflow: auto;
+    margin-bottom: 26px;
+
+  }
+  .file{
+    width: auto;
+    border-bottom: 0;
+  }
+  &_uploadFile{
+    font-size: 18px;
+    font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+    color: $text-dark;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 60px;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+}

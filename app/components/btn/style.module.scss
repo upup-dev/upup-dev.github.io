@@ -59,3 +59,10 @@
   top: 1px;
   text-transform: uppercase;
 }
+button{
+  &.link{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+}

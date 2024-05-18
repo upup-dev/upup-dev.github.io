@@ -18,7 +18,7 @@ const Services = () => {
                             <div className={styles.services_wrapperText}>
                                 <div className={styles.services_blockTitle}>{i.title}</div>
                                 <div className={styles.services_blockDescription}>{i.description}</div>
-                                <Btn color={'#fff'} name={'LEARN MORE'} white={true} fontSize={'font-14px'} url={'/'}/>
+                                <Btn color={'#fff'} name={'LEARN MORE'} white={true} fontSize={'font-14px'} url={'/'} type={'link'}/>
                             </div>
                         </div>
                     ))}

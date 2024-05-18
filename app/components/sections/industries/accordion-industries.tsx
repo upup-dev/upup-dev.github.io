@@ -89,7 +89,7 @@ const AccordionIndustries = () => {
                                 ))}
                             </div>
                             <div className='btn-more'>
-                                <Btn name={'SEE MORE'} color={'#FFF'} white={true} fontSize={'font-32px'} url={i.url}/>
+                                <Btn name={'SEE MORE'} color={'#FFF'} white={true} fontSize={'font-32px'} url={i.url} type={'link'}/>
                             </div>
                         </div>
                     </AccordionItem>
