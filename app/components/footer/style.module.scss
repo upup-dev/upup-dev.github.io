@@ -1,0 +1,118 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+.footer{
+  background: $bg-dark;
+  &_container{
+    @include container;
+  }
+  &_wrapperTop, &_nav{
+    display: flex;
+  }
+  &_logo{
+    padding: 60px 104px 51px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &_mail{
+    h4{
+      font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+      font-size: 24px;
+      color: $text_white;
+      margin-bottom: 24px;
+    }
+    a{
+      font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+      font-size: 44px;
+      color: $text-light-blue;
+      text-decoration: underline;
+      transition: color .3s ease-in-out;
+      &:hover{
+        color: rgba(195, 207, 237, 0.75);
+      }
+    }
+  }
+  &_nav{
+    flex-wrap: wrap;
+    padding: 70px 40px 51px 70px;
+    font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    gap: 90px;
+    border-left: 1px solid #454857;
+  }
+  &_navItems{
+
+  }
+  &_navTitle{
+    font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    color: $text-white;
+    a{
+      transition: color .3s ease-in-out;
+      &:hover{
+        color: rgba(255, 255, 255, 0.75);
+      }
+    }
+  }
+  &_navItemsNS{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    li{
+      a{
+        text-decoration: underline;
+      }
+    }
+  }
+  &_navItemUl{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    li{
+      a{
+        color: #6D6D74;
+        transition: .3s ease-in-out;
+        &:hover{
+          color: rgba(255, 255, 255, 0.75);
+        }
+      }
+    }
+  }
+  &_platforms{
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+    width: 100%;
+    a{
+      transition: .3s ease-in-out;
+      &:hover{
+        transform: translateY(-3px);
+      }
+      img{
+
+      }
+    }
+  }
+  &_wrapperbottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px 34px;
+    border-top: 1px solid #454857;
+    color: $text-white;
+  }
+  &_upup, &_policy{
+    font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+    font-size: 18px;
+  }
+  &_soc{
+    display: flex;
+    gap: 164px;
+    a{
+      font-family: 'HelveticaNeueCyr-Italic', sans-serif;
+    }
+  }
+}
+

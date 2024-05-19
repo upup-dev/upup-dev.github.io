@@ -85,16 +85,16 @@
   span{
     width: 2px;
     height: 17px;
-    background-color: #fff;
+    background-color: $bg-white;
     &:before, &:after{
       top: 11px;
     }
     &:after{
-      background-color: #fff;
+      background-color: $bg-white;
       transform: rotate(135deg);
     }
     &:before{
-      background-color: #fff;
+      background-color: $bg-white;
       transform: rotate(-135deg);
     }
   }

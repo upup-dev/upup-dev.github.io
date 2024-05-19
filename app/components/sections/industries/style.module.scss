@@ -51,7 +51,7 @@
   &_title{
     font-family: 'HelveticaNeueCyr-BoldItalic', sans-serif;
     font-size: 18px;
-    color: #fff;
+    color:$text-white;
   }
   &_btn{
     display: flex;
@@ -78,7 +78,7 @@
       color: rgba(255, 255, 255, 0.45);
     }
     &.active{
-      color: rgba(255, 255, 255, 1);
+      color: $text-white;
       transform: translateX(-11px);
     }
   }
@@ -95,7 +95,7 @@
     max-width: 518px;
     font-family: 'HelveticaNeueCyr-Medium', sans-serif;
     font-size: 24px;
-    color: #fff;
+    color: $text-white;
     margin-top: 27px;
   }
   &_swiperWrapTag{
@@ -117,7 +117,7 @@
     }
   }
   &_swiperTagTitle{
-    color: #fff;
+    color: $text-white;
   }
   &_btnMore{
     display: flex;

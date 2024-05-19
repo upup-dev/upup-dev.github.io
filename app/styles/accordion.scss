@@ -52,7 +52,7 @@
   &[data-open="true"] {
     background-color: #262731;
     .mob-industries_title{
-      color: #fff;
+      color: $text-white;
     }
   }
   &_trigger{
@@ -104,7 +104,7 @@
     .title{
       font-family: 'HelveticaNeueCyr-Medium', sans-serif;
       font-size: 16px;
-      color: #fff;
+      color: $text-white;
       max-width: 400px;
       padding: 0 40px;
       @media screen and (max-width: 769px){
@@ -128,7 +128,7 @@
           line-height: 22px;
         }
         .swiper-tag-title{
-          color: #fff;
+          color: $text-white;
         }
         a{
           color: $text-upup;
