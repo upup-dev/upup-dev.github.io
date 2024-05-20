@@ -185,6 +185,9 @@ li{
     z-index: 0;
     .mob-menu{
       border-color: #454857;
+      &:first-of-type{
+        border-top: 1px solid #454857;
+      }
     }
     .mob-menu_title{
       color: $text-white;
