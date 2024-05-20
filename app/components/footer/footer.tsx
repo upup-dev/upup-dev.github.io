@@ -58,9 +58,9 @@ const Footer = () => {
                                 ))}
                             </ul>
                             <div className={styles.footer_platforms}>
-                                <Link href={'/'}><Image src="/images/clutch.png" alt={'clutch'} width={168}
+                                <Link target={'_blank'} href={'https://clutch.co/profile/upup-0'}><Image src="/images/clutch.png" alt={'clutch'} width={168}
                                                         height={60}/></Link>
-                                <Link href={'/'}><Image src="/images/upwork.png" alt={'upwork'} width={194}
+                                <Link target={'_blank'} href={'https://www.upwork.com/agencies/upup/'}><Image src="/images/upwork.png" alt={'upwork'} width={194}
                                                         height={60}/></Link>
                             </div>
                         </div>
@@ -69,8 +69,8 @@ const Footer = () => {
                 <div className={styles.footer_wrapperbottom}>
                     <div className={styles.footer_upup}>© UPUP 2024</div>
                     <div className={styles.footer_soc}>
-                        <Link href={'https://www.linkedin.com/company/upup-company/'}>{'[ Linkedin ]'}</Link>
-                        <Link href={'https://jobs.dou.ua/companies/upup/'}>{'[ DOU ]'}</Link>
+                        <Link target={'_blank'} href={'https://www.linkedin.com/company/upup-company/'}>{'[ Linkedin ]'}</Link>
+                        <Link target={'_blank'} href={'https://jobs.dou.ua/companies/upup/'}>{'[ DOU ]'}</Link>
                     </div>
                     <Link className={styles.footer_policy} href={'/'}>Privacy Policy</Link>
                 </div>
