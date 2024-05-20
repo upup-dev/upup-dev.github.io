@@ -3,13 +3,13 @@ import styles from "./style.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import {navigation} from "@/app/data/DataNav";
-import {AccordionItem} from "@nextui-org/react";
 import NavbarMob from "@/app/components/navbarMob/NavbarMob";
 import useWindowSize from "@/app/hooks/useWindowsSize";
-import Navbar from "@/app/components/navbar/Navbar";
 
 const Footer = () => {
     const { width } = useWindowSize();
+    let currentDate = new Date();
+    let currentYear = currentDate.getFullYear();
     return (
         <footer className={`${styles.footer} footer`}>
             <div className={styles.footer_container}>
@@ -24,9 +24,9 @@ const Footer = () => {
                         </div>
                         {width && width <= 1024 ? (
                             <div className={styles.footer_platformsMob}>
-                                <Link href={'/'}><Image src="/images/clutch.png" alt={'clutch'} width={168}
+                                <Link target={'_blank'} href={'https://clutch.co/profile/upup-0'}><Image src="/images/clutch.png" alt={'clutch'} width={168}
                                                         height={60}/></Link>
-                                <Link href={'/'}><Image src="/images/upwork.png" alt={'upwork'} width={194}
+                                <Link target={'_blank'} href={'https://www.upwork.com/agencies/upup/'}><Image src="/images/upwork.png" alt={'upwork'} width={194}
                                                         height={60}/></Link>
                             </div>
                         ) : ''}
@@ -67,7 +67,7 @@ const Footer = () => {
                     )}
                 </div>
                 <div className={styles.footer_wrapperbottom}>
-                    <div className={styles.footer_upup}>© UPUP 2024</div>
+                    <div className={styles.footer_upup}>© UPUP {currentYear}</div>
                     <div className={styles.footer_soc}>
                         <Link target={'_blank'} href={'https://www.linkedin.com/company/upup-company/'}>{'[ Linkedin ]'}</Link>
                         <Link target={'_blank'} href={'https://jobs.dou.ua/companies/upup/'}>{'[ DOU ]'}</Link>
