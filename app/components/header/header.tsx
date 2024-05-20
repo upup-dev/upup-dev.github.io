@@ -28,7 +28,7 @@ const Header = () => {
                 <Link className={styles.header_logo} href="/">
                     <Image src='/images/logo.svg' alt='UpUp' width={118} height={46} priority/>
                 </Link>
-                {width && width < 1024 ? (
+                {width && width <= 1024 ? (
                         <>
                             <button onClick={toggleMobMenu} className={`${styles.header_mobMenu} ${styles[isActive]}`}>Menu</button>
                             {isOpen && <NavbarMob/>}

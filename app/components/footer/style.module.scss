@@ -13,8 +13,36 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media screen and (max-width: 1420px) {
+      padding-right: 4.3vw;
+    }
+    @media screen and (max-width: 1240px) {
+      padding-left: 1.5vw;
+    }
+    @media screen and (max-width: 1024px) {
+      order: 1;
+      padding-top: 50px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  &_logoMob{
+    padding: 40px 16px 60px;
+  }
+  &_logolink{
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+  }
+  &_wrapperTop{
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+    }
   }
   &_mail{
+    @media screen and (max-width: 1024px) {
+      margin-bottom: 60px;
+    }
     h4{
       font-family: 'HelveticaNeueCyr-Roman', sans-serif;
       font-size: 24px;
@@ -40,6 +68,14 @@
     line-height: 18px;
     gap: 90px;
     border-left: 1px solid #454857;
+    @media screen and (max-width: 1420px) {
+      gap: 4vw;
+      padding: 70px 40px 51px 3.5vw;
+    }
+    @media screen and (max-width: 1240px) {
+      gap: 4vw;
+      padding: 70px 1.5vw 51px 3.5vw;
+    }
   }
   &_navItems{
 
@@ -96,20 +132,60 @@
       }
     }
   }
+  &_platformsMob{
+    display: none;
+    @media screen and (max-width: 1024px) {
+      display: flex;
+      gap: 21px;
+    }
+    a{
+      img{
+        @media screen and (max-width: 416px) {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
   &_wrapperbottom{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 30px 40px 34px;
     border-top: 1px solid #454857;
     color: $text-white;
+    @media screen and (max-width: 1024px) {
+      padding: 0 0 24px;
+    }
   }
   &_upup, &_policy{
     font-family: 'HelveticaNeueCyr-Roman', sans-serif;
     font-size: 18px;
+    @media screen and (max-width: 1024px){
+      padding-top: 40px;
+    }
+  }
+  &_upup{
+    @media screen and (max-width: 1024px){
+      padding-left: 16px;
+    }
+  }
+  &_policy{
+    @media screen and (max-width: 1024px){
+      padding-right: 16px;
+    }
   }
   &_soc{
     display: flex;
     gap: 164px;
+    @media screen and (max-width: 1024px) {
+      justify-content: center;
+      gap: 32px;
+      order: -1;
+      width: 100%;
+      border-bottom: 1px solid #454857;
+      padding: 24px 16px;
+    }
     a{
       font-family: 'HelveticaNeueCyr-Italic', sans-serif;
     }

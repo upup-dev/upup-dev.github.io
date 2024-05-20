@@ -18,6 +18,7 @@
     margin-top: 0;
     padding-top: 40px;
     margin-bottom: 80px;
+    padding-bottom: 0;
   }
   &_left{
     padding-right: 16px;
@@ -188,6 +189,7 @@
   @include container;
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    height: auto;
   }
 }
 

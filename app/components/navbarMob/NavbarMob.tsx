@@ -14,7 +14,7 @@ const NavbarMob = () => {
     };
 
     return (
-        <nav className={styles.navbarMob}>
+        <nav className={`${styles.navbarMob} navbar_mob`}>
             <ul className={styles.navbarMob_items}>
                 <Accordion
                     showDivider={false}
@@ -26,10 +26,10 @@ const NavbarMob = () => {
                             height: "auto",
                             transition: {
                                 height: {
-                                    type: "spring",
-                                    stiffness: 500,
-                                    damping: 30,
-                                    duration: 1,
+                                    // type: "spring",
+                                    // stiffness: 500,
+                                    damping: 0,
+                                    duration: .5,
                                 },
                                 opacity: {
                                     easings: "ease",
@@ -70,7 +70,7 @@ const NavbarMob = () => {
                         </AccordionItem>
                     ))}
                 </Accordion>
-                <ul className={styles.navbarMob_mainMenu}>
+                <ul className={`${styles.navbarMob_mainMenu} menu_withoutSub`}>
                     {navigation.filter(item => !item.submenu).map(({id, title, path}) => (
                         <li key={id} className={styles.navbarMob_menuItem}>
                             <Link className={styles.navbarMob_menuLink} href={path}>{title}</Link>
@@ -78,7 +78,7 @@ const NavbarMob = () => {
                     ))}
                 </ul>
             </ul>
-            <div className={styles.navbarMob_btnwrap}>
+            <div className={`${styles.navbarMob_btnwrap} btn_contact`}>
                 <Link className={styles.navbarMob_btn} href={'/'}>Contacts <Image src='/images/PaperPlaneWhite.svg' alt='arrow' width={18} height={18} /></Link>
             </div>
         </nav>
