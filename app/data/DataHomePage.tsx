@@ -14,7 +14,7 @@ export const industriesSlider = [
         id: 1,
         industriesName: 'Healthcare',
         url: 'services/healthcare',
-        urlVideo: 'https://d3vlq52qrgdnc2.cloudfront.net/bg-project-Mighty-Buildings.mp4',
+        urlVideo: '/video/healthcare-v1.mp4',
         title: 'Extra layer of security and reliability in your health tech application.',
         tags: [
             {id: 0, nameLine: "Platform:", projectName: 'Kontent.ai', url: '/Kontent.ai'},
