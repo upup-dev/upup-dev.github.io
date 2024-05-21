@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.clutchWidget{
+  border: 1px solid #454857;
+  border-radius: 8px;
+  max-width: 206px;
+  padding: 7px 9px 4px 9px;
+  background: #ffffff;
+  height: 60px;
+}
+

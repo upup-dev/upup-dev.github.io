@@ -35,6 +35,7 @@
     }
   }
   &_wrapperTop{
+    justify-content: space-between;
     @media screen and (max-width: 1024px) {
       flex-direction: column;
     }
@@ -68,6 +69,7 @@
     line-height: 18px;
     gap: 90px;
     border-left: 1px solid #454857;
+    max-width: 1081px;
     @media screen and (max-width: 1420px) {
       gap: 4vw;
       padding: 70px 40px 51px 3.5vw;
@@ -160,7 +162,7 @@
   }
   &_upup, &_policy{
     font-family: 'HelveticaNeueCyr-Roman', sans-serif;
-    font-size: 18px;
+    font-size: 12px;
 
     @media screen and (max-width: 1024px){
       padding-top: 40px;
@@ -194,10 +196,15 @@
     a{
       font-family: 'HelveticaNeueCyr-Italic', sans-serif;
       transition: color .3s ease-in-out;
+      font-size: 12px;
       &:hover{
         color: rgba(255, 255, 255, 0.75);
       }
     }
   }
+}
+.clutchWidget{
+  border: 1px solid #454857;
+  border-radius: 5px;
 }
 

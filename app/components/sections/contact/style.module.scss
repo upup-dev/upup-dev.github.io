@@ -21,10 +21,10 @@
     padding-bottom: 0;
   }
   &_left{
-    padding-right: 16px;
+    padding-right: 40px;
     width: 100%;
-    max-width: 700px;
-    margin-right: auto;
+    max-width: 900px;
+    //margin-right: auto;
     @media screen and (max-width: 768px) {
       padding: 40px 16px 40px;
       max-width: 100%;

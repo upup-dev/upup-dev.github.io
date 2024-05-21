@@ -5,7 +5,9 @@ import Image from "next/image";
 import {navigation} from "@/app/data/DataNav";
 import NavbarMob from "@/app/components/navbarMob/NavbarMob";
 import useWindowSize from "@/app/hooks/useWindowsSize";
-
+import dynamic from "next/dynamic";
+// import ClutchWidget from "@/app/components/clutch-widget/ClutchWidget";
+const ClutchWidget = dynamic(() => import('@/app/components/clutch-widget/ClutchWidget'), { ssr: false });
 const Footer = () => {
     const { width } = useWindowSize();
     let currentDate = new Date();
@@ -24,8 +26,7 @@ const Footer = () => {
                         </div>
                         {width && width <= 1024 ? (
                             <div className={styles.footer_platformsMob}>
-                                <Link target={'_blank'} href={'https://clutch.co/profile/upup-0'}><Image src="/images/clutch.png" alt={'clutch'} width={168}
-                                                        height={60}/></Link>
+                                <ClutchWidget />
                                 <Link target={'_blank'} href={'https://www.upwork.com/agencies/upup/'}><Image src="/images/upwork.png" alt={'upwork'} width={194}
                                                         height={60}/></Link>
                             </div>
@@ -58,10 +59,14 @@ const Footer = () => {
                                 ))}
                             </ul>
                             <div className={styles.footer_platforms}>
-                                <Link target={'_blank'} href={'https://clutch.co/profile/upup-0'}><Image src="/images/clutch.png" alt={'clutch'} width={168}
-                                                        height={60}/></Link>
-                                <Link target={'_blank'} href={'https://www.upwork.com/agencies/upup/'}><Image src="/images/upwork.png" alt={'upwork'} width={194}
-                                                        height={60}/></Link>
+                                <ClutchWidget />
+                                {/*<Link target={'_blank'} href={'https://clutch.co/profile/upup-0'}>*/}
+                                {/*<Image src="/images/clutch.png" alt={'clutch'} width={168}*/}
+                                {/*       height={60}/>*/}
+                                {/*</Link>*/}
+                                <Link target={'_blank'} href={'https://www.upwork.com/agencies/upup/'}><Image
+                                    src="/images/upwork.png" alt={'upwork'} width={194}
+                                    height={60}/></Link>
                             </div>
                         </div>
                     )}
@@ -69,7 +74,8 @@ const Footer = () => {
                 <div className={styles.footer_wrapperbottom}>
                     <div className={styles.footer_upup}>© UPUP {currentYear}</div>
                     <div className={styles.footer_soc}>
-                        <Link target={'_blank'} href={'https://www.linkedin.com/company/upup-company/'}>{'[ Linkedin ]'}</Link>
+                    <Link target={'_blank'}
+                              href={'https://www.linkedin.com/company/upup-company/'}>{'[ Linkedin ]'}</Link>
                         <Link target={'_blank'} href={'https://jobs.dou.ua/companies/upup/'}>{'[ DOU ]'}</Link>
                     </div>
                     <Link className={styles.footer_policy} href={'/'}>Privacy Policy</Link>

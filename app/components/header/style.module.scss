@@ -45,6 +45,22 @@
     padding: 15px 20px;
     position: relative;
     top: -4px;
+    transition: all .3s ease-in-out;
+    svg{
+      path{
+        transition: .3s ease-in-out;
+      }
+    }
+    &:hover{
+      background-color: $bg-dark;
+      border-color: $bg-dark;
+      color: $text-white;
+      svg{
+        path{
+          stroke: $text-white;
+        }
+      }
+    }
     @media screen and (max-width: 1200px) {
       max-width: 136px;
       padding: 10px 15px;

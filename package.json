@@ -20,7 +20,9 @@
     "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",
+    "react-static-clutch-embed": "^1.2.3",
     "split-type": "^0.3.4",
+    "static-clutch-embed": "^1.2.1",
     "swiper": "^11.1.1"
   },
   "devDependencies": {
@@ -32,6 +34,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.2",
+    "react-clutch-badge": "^1.9.0",
     "sass": "^1.75.0",
     "typescript": "^5"
   }

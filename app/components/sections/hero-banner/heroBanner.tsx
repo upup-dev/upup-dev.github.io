@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HeroBanner = () => {
     return (
-        <section className={styles.heroBanner}>
+        <section className={`${styles.heroBanner} hero-banner`}>
             <div className={styles.container}>
                 <div className={styles.heroBanner_left}>
                     <h1 className={`${styles.heroBanner_title} h1 title-dark`}>Dedicated to Success, Driven by

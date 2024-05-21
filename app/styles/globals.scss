@@ -58,6 +58,23 @@ li{
     display: none !important;
   }
 }
+
+.hero-banner{
+  .btn-more{
+    a {
+      @media screen and (max-width: 769px) {
+        top: 0;
+      }
+      span{
+        @media screen and (max-width: 769px) {
+          font-size: 28px;
+          position: relative;
+          top: -1px;
+        }
+      }
+    }
+  }
+}
 .services{
   .btn-more{
     &>div{
