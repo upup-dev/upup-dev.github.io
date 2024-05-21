@@ -232,6 +232,23 @@ li{
   .mob-menu_indicator{
     &>span{
       background: transparent;
+      &.arrow-down{
+        &>span{
+          background-color: $bg-white;
+          &:before, &:after{
+            background-color: $bg-white;
+          }
+        }
+      }
+      &.arrow-up{
+        &>span{
+          background-color: #6D6D74;
+          &:before, &:after{
+            background-color: #6D6D74;
+          }
+        }
+      }
+
     }
   }
 

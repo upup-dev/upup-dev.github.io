@@ -142,9 +142,12 @@
     }
     a{
       img{
+        @media screen and (max-width: 460px) {
+          width: 43vw;
+        }
         @media screen and (max-width: 416px) {
-          width: 100%;
-          height: auto;
+          //width: 100%;
+          height: 100%;
         }
       }
     }

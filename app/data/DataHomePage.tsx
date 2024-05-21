@@ -3,7 +3,7 @@ export const industriesSlider = [
         id: 0,
         industriesName: 'Fintech',
         url: 'services/fintech',
-        urlVideo: '/video/fintech_v4.mp4',
+        urlVideo: '/video/fintech-v4_compres.mp4',
         title: 'Prominent stability of the financial operations in your project.',
         tags: [
             {id: 0, nameLine: "Platform:", projectName: 'Kontent.ai', url: '/Kontent.ai'},

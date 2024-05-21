@@ -57,8 +57,8 @@ const NavbarMob = () => {
                            itemClasses={itemClasses}>
                     {navigation.filter(item => item.submenu).map(({id, title, submenu}) => (
                         <AccordionItem key={id} aria-label={title} title={title} indicator={({ isOpen }) => (!isOpen ?
-                            <span className={styles.arrowDown}><span></span></span> :
-                            <span className={styles.arrowUp}><span></span></span>)}>
+                            <span className={`${styles.arrowDown} arrow-down`}><span></span></span> :
+                            <span className={`${styles.arrowUp} arrow-up`}><span></span></span>)}>
                             <ul className={styles.navbarMob_submenu}>
                                 {submenu?.map(({id, title, path}) => (
                                     <li key={id} className={styles.navbarMob_submenuItem}>
