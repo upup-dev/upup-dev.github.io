@@ -11,7 +11,7 @@ export default function Page() {
     return (
         <main className={styles.main}>
             <Header />
-            <HeroBanner />
+            {/*<HeroBanner />*/}
             <Technologies data={technologiesData as [{ id: number; urlIcon: string; }]}/>
             <Testimonials />
             <Contact />
