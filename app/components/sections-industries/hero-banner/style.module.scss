@@ -50,8 +50,9 @@
     position: relative;
     max-width: 708px;
     width: 100%;
+    background-color: $bg-lightBlue;
     video{
-      object-fit: cover;
+      object-fit: contain;
     }
   }
   &_title{
@@ -94,6 +95,11 @@
     &:last-of-type{
       margin-bottom: 0;
     }
+  }
+}
+.wrap{
+  &_industries{
+    background-color: #13141F;
   }
 }
 .container{

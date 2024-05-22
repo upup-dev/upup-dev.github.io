@@ -132,25 +132,25 @@ const Navbar = () => {
                      className={`${styles.header_submenuContainer} ${activeMenu === 0 ? styles.active : ""}`}>
                     <ul className={styles.header_submenu}>
                         <li className={styles.header_submenuItem}>
-                            <Link className={styles.header_submenuItemLink} href="/">
+                            <Link className={styles.header_submenuItemLink} href="/industries/fintech">
                                 <span className={styles.header_submenuItemTitle}>Fintech</span>
                                 <span className={styles.header_submenuItemDescription}>Thoughtful design for satisfying user experience</span>
                             </Link>
                         </li>
                         <li className={styles.header_submenuItem}>
-                            <Link className={styles.header_submenuItemLink} href="/">
+                            <Link className={styles.header_submenuItemLink} href="/industries/healthcare">
                                 <span className={styles.header_submenuItemTitle}>Healthcare</span>
                                 <span className={styles.header_submenuItemDescription}>To always be on a fingertip of your clients</span>
                             </Link>
                         </li>
                         <li className={styles.header_submenuItem}>
-                            <Link className={styles.header_submenuItemLink} href="/">
+                            <Link className={styles.header_submenuItemLink} href="/industries/productivity">
                                 <span className={styles.header_submenuItemTitle}>Productivity</span>
                                 <span className={styles.header_submenuItemDescription}>Catching web representation of your business</span>
                             </Link>
                         </li>
                         <li className={styles.header_submenuItem}>
-                            <Link className={styles.header_submenuItemLink} href="/">
+                            <Link className={styles.header_submenuItemLink} href="/industries/e-commerce">
                                 <span className={styles.header_submenuItemTitle}>E-commerce</span>
                                 <span className={styles.header_submenuItemDescription}>Biggest possible audience on your projects</span>
                             </Link>
@@ -187,13 +187,13 @@ const Navbar = () => {
                      className={`${styles.header_submenuContainer} ${activeMenu === 1 ? styles.active : ""}`}>
                     <ul className={styles.header_submenu}>
                         <li className={styles.header_submenuItem}>
-                            <Link className={styles.header_submenuItemLink} href="/">
+                            <Link className={styles.header_submenuItemLink} href="/services/design">
                                 <span className={styles.header_submenuItemTitle}>UX/UI Design</span>
                                 <span className={styles.header_submenuItemDescription}>Thoughtful design for satisfying user experience</span>
                             </Link>
                         </li>
                         <li className={styles.header_submenuItem}>
-                            <Link className={styles.header_submenuItemLink} href="/">
+                            <Link className={styles.header_submenuItemLink} href="/services/web-applications">
                                 <span className={styles.header_submenuItemTitle}>Web Applications</span>
                                 <span className={styles.header_submenuItemDescription}>To always be on a fingertip of your clients</span>
                             </Link>
@@ -205,13 +205,13 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className={styles.header_submenuItem}>
-                            <Link className={styles.header_submenuItemLink} href="/">
+                            <Link className={styles.header_submenuItemLink} href="/services/mobile-development">
                                 <span className={styles.header_submenuItemTitle}>Mobile Development</span>
                                 <span className={styles.header_submenuItemDescription}>Biggest possible audience on your projects</span>
                             </Link>
                         </li>
                         <li className={styles.header_submenuItem}>
-                            <Link className={styles.header_submenuItemLink} href="/">
+                            <Link className={styles.header_submenuItemLink} href="/services/hosting-devops">
                                 <span className={styles.header_submenuItemTitle}>Hosting & DevOps</span>
                                 <span className={styles.header_submenuItemDescription}>Effortless deployment followed by happy dev team</span>
                             </Link>

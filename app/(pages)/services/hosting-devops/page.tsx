@@ -11,7 +11,7 @@ export default function Page() {
         <main className={styles.main}>
             <Header />
             <section className={styles.sorry}>
-                <h1>WebSites </h1>
+                <h1>Hosting & DevOps </h1>
                 <p>Sorry, this page is not ready.</p>
             </section>
             <Technologies data={technologiesData as [{ id: number; urlIcon: string; }]}/>
