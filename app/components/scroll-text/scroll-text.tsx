@@ -53,8 +53,8 @@ const ScrollText = ({ text }: Props) => {
                         ease: "power1.out",
                         scrollTrigger: {
                             trigger: entry.target,
-                            start: "top 85%",
-                            end: "top 43%",
+                            start: "top 72%",
+                            end: "top 48%",
                             scrub: true,
                         }
                     });

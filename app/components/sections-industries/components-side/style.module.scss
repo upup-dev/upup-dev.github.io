@@ -1,0 +1,83 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.componentsSide{
+  padding-top: 86px;
+  padding-bottom: 86px;
+  background-color: $bg-dark;
+  @media screen and (max-width: 1024px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @media screen and (max-width: 1024px) {
+    padding-top: 33px;
+    padding-bottom: 47px;
+  }
+  &_container{
+    @include container;
+    padding: 0 40px;
+    @media screen and (max-width: 769px) {
+      flex-direction: column;
+      padding: 0 16px;
+    }
+  }
+  &_title{
+    max-width: 1051px;
+    margin-bottom: 90px;
+    color: $text-white;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 40px;
+    }
+    @media screen and (max-width: 370px) {
+      font-size: 40px;
+    }
+  }
+  &_blockWrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 60px;
+    grid-row-gap: 60px;
+    @media screen and (max-width: 1024px) {
+      grid-column-gap: 40px;
+      grid-row-gap: 40px;
+    }
+    @media screen and (max-width: 769px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  &_emptybox{
+    @media screen and (max-width: 769px) {
+      display: none;
+    }
+  }
+  &_block{
+    @include borderTop(rgba(255, 255, 255, .4));
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    &Title, &Number{
+      font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+    }
+    &Number, &Description{
+      font-size: 18px;
+    }
+    &Number{
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 32px;
+    }
+    &Title{
+      color: $text-white;
+      font-size: 24px;
+      line-height: 120%;
+      margin-bottom: 24px;
+      max-width: 320px;
+      text-transform: uppercase;
+    }
+    &Description{
+      font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}

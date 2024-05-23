@@ -56,6 +56,9 @@
       color: $text-light-blue;
       text-decoration: underline;
       transition: color .3s ease-in-out;
+      @media screen and (max-width: 370px) {
+        font-size: 36px;
+      }
       &:hover{
         color: rgba(195, 207, 237, 0.75);
       }
@@ -197,7 +200,7 @@
       padding: 24px 16px;
     }
     a{
-      font-family: 'HelveticaNeueCyr-Italic', sans-serif;
+      //font-family: 'HelveticaNeueCyr-Italic', sans-serif;
       transition: color .3s ease-in-out;
       font-size: 12px;
       &:hover{

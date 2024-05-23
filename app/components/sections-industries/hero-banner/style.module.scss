@@ -16,6 +16,7 @@
   @media screen and (max-width: 768px) {
     overflow: visible;
     height: auto;
+    border-bottom: none;
   }
   &_left{
     display: flex;
@@ -53,6 +54,9 @@
     background-color: $bg-lightBlue;
     video{
       object-fit: contain;
+      @media screen and (max-width: 430px) {
+        height: 394px;
+      }
     }
   }
   &_title{

@@ -6,14 +6,18 @@ import Technologies from "@/app/components/sections/technologies/technologies";
 import {technologiesData} from "@/app/data/DataHomePage";
 import Testimonials from "@/app/components/sections/testimonials/testimonials";
 import Contact from "@/app/components/sections/contact/contact";
-import {industriesHeroBanner} from "@/app/data/DataIndustries";
+import {industriesComponentsSide, industriesHeroBanner, industriesSalesSection} from "@/app/data/DataIndustries";
+import SalesSection from "@/app/components/sections-industries/sales-section/salesSection";
+import ComponentsSide from "@/app/components/sections-industries/components-side/componentsSide";
 
 export default function Page() {
     return (
         <main className={styles.main}>
             <Header />
-            <HeroBanner data={industriesHeroBanner}/>
-            <Technologies data={technologiesData as [{ id: number; urlIcon: string; }]}/>
+            <HeroBanner data={industriesHeroBanner} />
+            <SalesSection data={industriesSalesSection} />
+            <ComponentsSide data={industriesComponentsSide} />
+            <Technologies data={technologiesData as [{ id: number; urlIcon: string; }]} />
             <Testimonials />
             <Contact />
             <Footer />

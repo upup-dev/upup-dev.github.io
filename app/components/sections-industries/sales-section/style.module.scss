@@ -1,0 +1,79 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.salesSection{
+  padding-top: 101px;
+  padding-bottom: 142px;
+  @media screen and (max-width: 1024px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  &_container{
+    display: flex;
+    justify-content: space-between;
+    @include container;
+    padding: 0 40px;
+    @media screen and (max-width: 769px) {
+      flex-direction: column;
+      padding: 0 16px;
+    }
+  }
+  &_containerTop{
+    padding: 0 40px;
+    @media screen and (max-width: 769px) {
+      padding: 0 16px;
+    }
+    @include container;
+  }
+  &_caption{
+    max-width: 507px;
+    font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+    font-size: 24px;
+    line-height: 100%;
+    color: $text-gray;
+    margin-bottom: 59px;
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+  }
+  &_title{
+    max-width: 1051px;
+    margin-bottom: 90px;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 40px;
+    }
+  }
+  &_leftBlock{
+    font-family: 'HelveticaNeueCyr-BoldItalic', sans-serif;
+    font-size: 18px;
+    color: $text-dark;
+    @media screen and (max-width: 769px) {
+      //margin-bottom: 40px;
+    }
+  }
+  &_rightBlock{
+    max-width: 900px;
+    p{
+      margin-bottom: 50px;
+      @media screen and (max-width: 768px) {
+        margin-bottom: 40px;
+      }
+      &:last-of-type{
+        max-width: 700px;
+        span{
+          &:first-of-type{
+            padding-left: 0;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      max-width: 70vw;
+    }
+    @media screen and (max-width: 769px) {
+      max-width: 100%;
+    }
+  }
+}
