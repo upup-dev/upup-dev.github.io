@@ -20,7 +20,7 @@ const Meet = ({data}: Props) => {
                 <h2 className={`${styles.meet_title} h1-big`}>Meet our team</h2>
                 <div className={styles.meet_blocks}>
                     {data.map((i, index) => (
-                        <div className={styles.meet_block}>
+                        <div key={index} className={styles.meet_block}>
                             <div className={styles.meet_block_name}>{i.name}</div>
                             <div className={styles.meet_block_caption}>{i.caption}</div>
                             <Image className={styles.meet_block_img} src={i.imageUrl} alt={'avatar'} width={207} height={134} />

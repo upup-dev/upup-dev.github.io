@@ -20,7 +20,6 @@ interface Props {
 const SalesSection = ({data}: Props) => {
     const description1 = data.map(i => i.description1).join();
     const description2 = data.map(i => i.description2).join();
-    console.log('description1.join(" ")', description1)
     return (
         <section className={styles.salesSection}>
             <div className={styles.salesSection_containerTop}>
