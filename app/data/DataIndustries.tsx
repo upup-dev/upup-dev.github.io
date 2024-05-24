@@ -82,7 +82,7 @@ export const industriesProof = [
         className: 'industries',
         title: 'And the proof?',
         caption: 'Lorem ipsum dolor sit amet consectetur. Non metus elementum elit at vulputate. Libero tempus ac lectus neque placerat viverra eu.',
-        btnName: 'Next projects',
+        btnName: 'See All',
         portfolioItem: [
             {
                 id: 0,

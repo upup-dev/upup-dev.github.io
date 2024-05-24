@@ -1,8 +1,10 @@
+import {eCommerce, edtech, fintech, healthcare, industries} from "@/app/data/variables";
+
 export const industriesSlider = [
     {
         id: 0,
         industriesName: 'Fintech',
-        url: '/industries/fintech',
+        url: `/${industries}/${fintech}`,
         urlVideo: '/video/fintech-v4_compres.mp4',
         title: 'Prominent stability of the financial operations in your project.',
         tags: [
@@ -13,7 +15,7 @@ export const industriesSlider = [
     {
         id: 1,
         industriesName: 'Healthcare',
-        url: '/industries/healthcare',
+        url: `/${industries}/${healthcare}`,
         urlVideo: '/video/healthcare-v1.mp4',
         title: 'Extra layer of security and reliability in your health tech application.',
         tags: [
@@ -24,8 +26,8 @@ export const industriesSlider = [
     },
     {
         id: 2,
-        industriesName: 'Productivity',
-        url: '/industries/productivity',
+        industriesName: 'EdTech',
+        url: `/${industries}/${edtech}`,
         urlVideo: 'https://d3vlq52qrgdnc2.cloudfront.net/bg-project-kinetik.mp4',
         title: 'Comfortable and safe environment for your clients\' mental health.',
         tags: [
@@ -36,7 +38,7 @@ export const industriesSlider = [
     {
         id: 3,
         industriesName: 'E-commerce',
-        url: '/industries/e-commerce',
+        url: `/${industries}/${eCommerce}`,
         urlVideo: 'https://d3vlq52qrgdnc2.cloudfront.net/bg-project-Mighty-Buildings.mp4',
         title: 'Care-free tech side of attracting new clients and retaining old ones.',
         tags: [
