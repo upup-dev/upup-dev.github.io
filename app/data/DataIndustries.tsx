@@ -99,3 +99,36 @@ export const industriesProof = [
         ]
     },
 ];
+
+export const industriesTeem = [
+    {
+        id: 0,
+        name: 'Hudym Vadym',
+        caption: 'React/Redux engineer, with 3 years of experience in creating fast, responsive, and durable web projects',
+        imageUrl: '/images/industries/avatar1.png',
+    },
+    {
+        id: 1,
+        name: 'Harahan Oleksandr',
+        caption: 'React/Redux engineer, with 3 years of experience in creating fast, responsive, and durable web projects',
+        imageUrl: '/images/industries/avatar2.png',
+    },
+    {
+        id: 2,
+        name: 'Lihinov Oleksandr',
+        caption: 'React/Redux engineer, with 3 years of experience in creating fast, responsive, and durable web projects',
+        imageUrl: '/images/industries/avatar3.png',
+    },
+    {
+        id: 3,
+        name: 'Savannah Nguyen',
+        caption: 'React/Redux engineer, with 3 years of experience in creating fast, responsive, and durable web projects',
+        imageUrl: '/images/industries/avatar4.png',
+    },
+    {
+        id: 4,
+        name: 'Jenny Wilson',
+        caption: 'React/Redux engineer, with 3 years of experience in creating fast, responsive, and durable web projects',
+        imageUrl: '/images/industries/avatar5.png',
+    },
+];

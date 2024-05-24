@@ -1,0 +1,106 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.meet{
+  padding-bottom: 160px;
+  @media screen and (max-width: 769px){
+    padding-bottom: 80px;
+  }
+  &_container{
+    @include container;
+    @media screen and (max-width: 991px){
+      padding: 0 16px;
+    }
+  }
+  &_title{
+    text-align: center;
+    @media screen and (max-width: 540px){
+      text-align: left;
+    }
+  }
+
+  &_blocks{
+    margin-top: 50px;
+    @media screen and (max-width: 540px){
+      margin-top: 40px;
+    }
+  }
+  &_block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 79px;
+    @media screen and (max-width: 1400px){
+      gap: 20px;
+    }
+    @media screen and (max-width: 991px){
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+      padding: 40px 0;
+    }
+    @media screen and (max-width: 540px){
+      align-items: flex-start;
+      text-align: left;
+    }
+    @include borderTop(#DBE5FF);
+    &:last-of-type{
+      @include borderBottom(#DBE5FF);
+    }
+    &:hover{
+      background-color: $bg-dark;
+      @include borderTop($bg-dark);
+      .meet_block_name, .meet_block_caption{
+        color: $text-white;
+      }
+      &:last-of-type{
+        @include borderBottom($bg-dark);
+      }
+    }
+    &_name, &_caption{
+      //transition: .3s ease;
+    }
+    &_name{
+      flex: 1 0 auto;
+      font-size: 50px;
+      font-family: 'HelveticaNeueCyr-Heavy', sans-serif;
+      color: $text-dark;
+      text-transform: uppercase;
+      padding-left: 40px;
+      @media screen and (max-width: 1290px){
+        font-size: 40px;
+      }
+      @media screen and (max-width: 1150px){
+        font-size: 30px;
+      }
+      @media screen and (max-width: 991px){
+        padding-left: 0;
+        margin-top: 30px;
+      }
+      @media screen and (max-width: 769px){
+        font-size: 24px;
+      }
+    }
+    &_caption{
+      max-width: 413px;
+      font-size: 16px;
+      line-height: 140%;
+      font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+      color: $text-dark;
+      @media screen and (max-width: 1150px){
+        max-width: 350px;
+      }
+      @media screen and (max-width: 991px){
+        margin-top: 16px;
+      }
+    }
+    &_img{
+      margin-top: -1px;
+      margin-bottom: -1px;
+      @media screen and (max-width: 991px){
+        order: -1;
+      }
+    }
+  }
+}

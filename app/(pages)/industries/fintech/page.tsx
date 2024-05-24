@@ -10,11 +10,12 @@ import {
     industriesComponentsSide,
     industriesHeroBanner,
     industriesProof,
-    industriesSalesSection
+    industriesSalesSection, industriesTeem
 } from "@/app/data/DataIndustries";
 import SalesSection from "@/app/components/sections-industries/sales-section/salesSection";
 import ComponentsSide from "@/app/components/sections-industries/components-side/componentsSide";
 import Proof from "@/app/components/sections-industries/proof/proof";
+import Meet from "@/app/components/sections-industries/meet/meet";
 
 export default function Page() {
     return (
@@ -25,6 +26,7 @@ export default function Page() {
             <ComponentsSide data={industriesComponentsSide} />
             <Proof data={industriesProof}/>
             <Technologies data={technologiesData as [{ id: number; urlIcon: string; }]} />
+            <Meet data={industriesTeem}/>
             <Testimonials />
             <Contact />
             <Footer />

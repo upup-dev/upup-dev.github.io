@@ -40,8 +40,8 @@ const Proof = ({data}: Props) => {
                         ))
                     ))}
                 </div>
+                <Link className={styles.proof_btn} href={'/'}>{data.map(i => i.btnName)}<Image src={'/images/ArrowRight.svg'} alt={'arrow-right'} height={22} width={22} /> </Link>
             </div>
-            <Link className={styles.proof_btn} href={'/'}>{data.map(i => i.btnName)}<Image src={'/images/ArrowRight.svg'} alt={'arrow-right'} height={22} width={22} /> </Link>
         </section>
     );
 }
