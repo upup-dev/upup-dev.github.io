@@ -23,17 +23,19 @@ const ComponentsSide = ({data}: Props) => {
     return (
         <section className={styles.componentsSide}>
             <div className={styles.componentsSide_container}>
-                <h2 className={`${styles.componentsSide_title} h1-big`}>{data.map(i => i.title)}</h2>
+                <h2 className={`${styles.componentsSide_title} h1-big`}>
+                    {data.map(i => i.title).join(', ')}
+                </h2>
                 <div className={styles.componentsSide_blockWrapper}>
                     <div className={styles.componentsSide_emptybox}></div>
-                    {data.filter(item => item.components).map(({components}) => (
-                        components?.map((i, index) => (
-                            <div key={index} className={styles.componentsSide_block}>
+                    {data.filter(item => item.components && item.components.length > 0).map(({components}) => (
+                        components.map(component => (
+                            <div key={component.id} className={styles.componentsSide_block}>
                                 <div className={styles.componentsSide_blockNumber}>
-                                    [0{i.id + 1}]
+                                    [0{component.id + 1}]
                                 </div>
-                                <h3 className={styles.componentsSide_blockTitle}>{i.title}</h3>
-                                <p className={styles.componentsSide_blockDescription}>{i.description}</p>
+                                <h3 className={styles.componentsSide_blockTitle}>{component.title}</h3>
+                                <p className={styles.componentsSide_blockDescription}>{component.description}</p>
                             </div>
                         ))
                     ))}

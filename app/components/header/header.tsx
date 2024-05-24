@@ -26,7 +26,7 @@ const Header = () => {
         <header className={styles.header}>
             <div className={styles.header_wrapper}>
                 <Link className={styles.header_logo} href="/">
-                    <Image src='/images/logo.svg' alt='UpUp' width={118} height={46} priority/>
+                    <Image src='/images/new-logo.svg' alt='UpUp' width={118} height={46} priority/>
                 </Link>
                 {width && width <= 1024 ? (
                         <>

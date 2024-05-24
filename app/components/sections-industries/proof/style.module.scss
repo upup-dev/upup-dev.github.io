@@ -1,0 +1,116 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.heroBanner{
+  display: flex;
+  height: 770px;
+  padding-top: 79px;
+  overflow: hidden;
+  @include borderBottom($border-color);
+  @media screen and (max-width: 1200px) {
+    padding-top: 82px;
+  }
+  @media screen and (max-width: 1024px) {
+    padding-top: 65px;
+  }
+  @media screen and (max-width: 768px) {
+    overflow: visible;
+    height: auto;
+    border-bottom: none;
+  }
+  &_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 69px;
+    padding-left: 40px;
+    @media screen and (max-width: 768px) {
+      padding: 40px 16px 40px;
+    }
+
+  }
+  &_bgImages{
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+    height: 692px;
+    @media screen and (max-width: 1024px) {
+      height: 706px;
+      max-width: 50vw;
+    }
+    @media screen and (max-width: 769px) {
+      height: 394px;
+      max-width: 55vw;
+      margin-left: auto;
+      display: block;
+    }
+
+  }
+  &_right{
+    position: relative;
+    max-width: 708px;
+    width: 100%;
+    background-color: $bg-lightBlue;
+    video{
+      object-fit: contain;
+      @media screen and (max-width: 430px) {
+        height: 394px;
+      }
+    }
+  }
+  &_title{
+    max-width: 700px;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 100px;
+    }
+  }
+  &_bottomBlock{
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+    max-width: 507px;
+    @media screen and (max-width: 768px) {
+      gap: 24px;
+    }
+  }
+  &_text{
+    font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+    color: $title-dark;
+    font-size: 18px;
+    line-height: normal;
+  }
+  &_tags{
+    display: flex;
+    gap: 24px;
+    font-size: 16px;
+    line-height: 140%;
+    font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+    color: $title-dark;
+  }
+  &_tagTitle{
+
+  }
+  &_tagLink{
+    color: $text-upup;
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: underline;
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+}
+.wrap{
+  &_industries{
+    background-color: #13141F;
+  }
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  @include container;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}

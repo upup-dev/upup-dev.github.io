@@ -75,3 +75,27 @@ export const industriesComponentsSide = [
         ]
     },
 ];
+
+export const industriesProof = [
+    {
+        id: 0,
+        className: 'industries',
+        title: 'And the proof?',
+        caption: 'Lorem ipsum dolor sit amet consectetur. Non metus elementum elit at vulputate. Libero tempus ac lectus neque placerat viverra eu.',
+        btnName: 'Next projects',
+        portfolioItem: [
+            {
+                id: 0,
+                url: '/images/industries/portfolio-pic1.png',
+                title: 'Lorem ipsum',
+                description: 'Lorem ipsum dolor sit amet consectetur. '
+            },
+            {
+                id: 1,
+                url: '/images/industries/portfolio-pic2.png',
+                title: 'Lorem ipsum',
+                description: 'Lorem ipsum dolor sit amet consectetur. '
+            }
+        ]
+    },
+];

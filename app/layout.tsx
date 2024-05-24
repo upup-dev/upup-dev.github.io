@@ -14,9 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-          <SmoothScrolling>{children}</SmoothScrolling>
-      </body>
+    <body>
+    <link rel="icon" href="/favicon.svg" sizes="any"/>
+    <SmoothScrolling>{children}</SmoothScrolling>
+    </body>
     </html>
   );
 }

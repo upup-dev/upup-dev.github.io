@@ -18,7 +18,7 @@ const Footer = () => {
                 <div className={styles.footer_wrapperTop}>
                     <div className={styles.footer_logo}>
                         <Link className={styles.footer_logolink} href={'/'}>
-                            <Image src={'/images/logo-footer.png'} alt={'upup'} height={139} width={356}/>
+                            <Image src={'/images/new-logo-white.svg'} alt={'upup'} height={139} width={356}/>
                         </Link>
                         <div className={styles.footer_mail}>
                             <h4>Work with us</h4>
