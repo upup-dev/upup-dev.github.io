@@ -36,3 +36,23 @@ jobs:
 
       - name: Log out of ECR
         run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Run login script on EC2 instance
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-34-193-84-245.compute-1.amazonaws.com 'bash -s' < ./docker-login.sh
+
+      - name: Run pull script on EC2 instance
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-34-193-84-245.compute-1.amazonaws.com 'bash -s' < ./docker-pull.sh
+
+      - name: Run rebuild script on EC2 instance
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-34-193-84-245.compute-1.amazonaws.com 'bash -s' < ./rebuild.sh    
+
+
+
