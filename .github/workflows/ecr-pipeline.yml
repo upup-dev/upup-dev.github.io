@@ -48,7 +48,7 @@ jobs:
 
       - name: Run pull script on EC2 instance
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-34-193-84-245.compute-1.amazonaws.com 'bash./upup/docker-pull.sh'
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-34-193-84-245.compute-1.amazonaws.com 'bash ./upup/docker-pull.sh'
 
       - name: Run rebuild script on EC2 instance
         run: |
