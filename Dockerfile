@@ -13,6 +13,7 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
+ENV NEXT_TELEMETRY_DISABLED=1
 # Build the Next.js application
 RUN npm run build
 
