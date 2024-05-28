@@ -44,15 +44,15 @@ jobs:
 
       - name: Run login script on EC2 instance
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-34-193-84-245.compute-1.amazonaws.com 'bash -s' < /home/ubuntu/upup/docker-login.sh
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-34-193-84-245.compute-1.amazonaws.com 'bash ./upup/docker-login.sh'
 
       - name: Run pull script on EC2 instance
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-34-193-84-245.compute-1.amazonaws.com 'bash -s' < /home/ubuntu/upup/docker-pull.sh
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-34-193-84-245.compute-1.amazonaws.com 'bash./upup/docker-pull.sh'
 
       - name: Run rebuild script on EC2 instance
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-34-193-84-245.compute-1.amazonaws.com 'bash -s' < /home/ubuntu/upup/rebuild.sh    
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-34-193-84-245.compute-1.amazonaws.com 'bash ./upup/rebuild.sh'    
 
 
 
