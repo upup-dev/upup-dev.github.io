@@ -23,7 +23,9 @@ const Meet = ({data}: Props) => {
                         <div key={index} className={styles.meet_block}>
                             <div className={styles.meet_block_name}>{i.name}</div>
                             <div className={styles.meet_block_caption}>{i.caption}</div>
-                            <Image className={styles.meet_block_img} src={i.imageUrl} alt={'avatar'} width={207} height={134} />
+                            <div className={styles.meet_wrap_img}>
+                                <Image className={styles.meet_block_img} src={i.imageUrl} alt={'avatar'} width={207} height={134} />
+                            </div>
                         </div>
                     ))}
                 </div>

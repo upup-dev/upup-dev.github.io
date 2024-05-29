@@ -30,7 +30,7 @@
         a{
           font-family: 'HelveticaNeueCyr-Roman', sans-serif;
           font-size: 18px;
-          color: #6D6D74;
+          color: #363741;
           padding: 12px 40px;
           display: block;
           @media screen and (max-width: 1024px){
@@ -47,6 +47,43 @@
     }
   }
 }
+
+.header{
+
+  .mob-menu_trigger[data-open="true"] {
+    .mob-menu_title{
+      color: #6d6d7475;
+    }
+  }
+  .mob-menu_content{
+    ul{
+      li{
+        a{
+          color: $title-dark;
+        }
+      }
+    }
+  }
+}
+
+.footer{
+
+  .mob-menu_trigger[data-open="true"] {
+    .mob-menu_title{
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  .mob-menu_content{
+    ul{
+      li{
+        a{
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+  }
+}
+
 
 .mob-industries{
   &[data-open="true"] {

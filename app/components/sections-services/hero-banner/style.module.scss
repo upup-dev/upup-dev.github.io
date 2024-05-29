@@ -1,0 +1,210 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.heroBanner{
+  display: flex;
+  height: 770px;
+  padding-top: 79px;
+  overflow: hidden;
+  @include borderBottom($border-color);
+  @media screen and (max-width: 1200px) {
+    padding-top: 82px;
+  }
+  @media screen and (max-width: 1024px) {
+    padding-top: 64px;
+  }
+  @media screen and (max-width: 991px) {
+    height: 600px;
+  }
+  @media screen and (max-width: 768px) {
+    overflow: visible;
+    height: auto;
+  }
+  &_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 69px;
+    padding-left: 40px;
+    @media screen and (max-width: 768px) {
+      padding: 40px 16px 40px;
+    }
+
+  }
+  &_right{
+    width: 100%;
+    max-width: 595px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: $bg-lightBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 1200px) {
+      max-width: 45vw;
+    }
+    @media screen and (max-width: 768px) {
+      min-height: 600px;
+      max-width: 100vw;
+    }
+    @media screen and (max-width: 540px) {
+      min-height: 500px;
+    }
+    @media screen and (max-width: 470px) {
+      min-height: 436px;
+    }
+    &_rotateBlock{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 1859px;
+      height: 1658px;
+      background-color: #FF602E;
+      transform: rotate(-22deg);
+      left: -395px;
+      bottom: 27px;
+      @media screen and (max-width: 768px) {
+        transform: rotate(346deg);
+        left: -392px;
+        bottom: -82px;
+      }
+      @media screen and (max-width: 540px) {
+        transform: rotate(-19.5deg);
+        left: -342px;
+        bottom: 10px;
+      }
+      &Dark{
+        width: 100%;
+        background-color: $bg-dark;
+        height: 235px;
+        .heroBanner_right_rotateBlockText{
+          margin-top: 5px;
+          margin-left: 330px;
+          @media screen and (max-width: 991px) {
+            margin-left: 280px;
+          }
+          @media screen and (max-width: 768px) {
+            margin-left: 530px;
+          }
+          @media screen and (max-width: 540px) {
+            margin-left: 280px;
+          }
+        }
+      }
+      &Text{
+        font-size: 24px;
+        line-height: 140%;
+        font-family: 'HelveticaNeueCyr-Bold', sans-serif;
+        color: $text-white;
+        margin-left: 200px;
+        @media screen and (max-width: 991px) {
+          font-size: 18px;
+          margin-left: 150px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size:24px;
+          margin-left: 420px;
+        }
+        @media screen and (max-width: 540px) {
+          font-size: 18px;
+          margin-left: 150px;
+        }
+      }
+    }
+    &_slider, &_slider2{
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 30px;
+      @media screen and (max-width: 991px) {
+        gap: 19px;
+      }
+      img{
+        @media screen and (max-width: 991px) {
+          width: 141px;
+          height: 115px;
+        }
+        @media screen and (max-width: 540px) {
+          width: 138px;
+          height: 103px;
+        }
+      }
+    }
+    &_slider2{
+      animation: scroll 60s linear infinite alternate;
+    }
+    &_slider{
+      animation: scroll 60s linear infinite alternate-reverse;
+    }
+    &_wrap{
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      position: absolute;
+      top: 76px;
+      @media screen and (max-width: 991px) {
+        gap: 19px;
+      }
+      @media screen and (max-width: 540px) {
+        top: 48px;
+      }
+      .heroBanner_right_slider{
+        &:first-of-type{
+          margin-left: 70px;
+        }
+      }
+    }
+  }
+  &_title{
+    max-width: 700px;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 100px;
+    }
+  }
+  &_bottomBlock{
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+    max-width: 574px;
+    @media screen and (max-width: 768px) {
+      gap: 24px;
+    }
+  }
+  &_text{
+    font-family: 'HelveticaNeueCyr-Medium', sans-serif;
+    color: $text-gray;
+    font-size: 24px;
+    line-height: normal;
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
+    @media screen and (max-width: 540px) {
+      font-size: 15px;
+    }
+  }
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  @include container;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+
+.heroBanner_right_slider_paused {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-30%);
+  }
+}

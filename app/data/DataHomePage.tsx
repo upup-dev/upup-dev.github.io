@@ -50,6 +50,12 @@ export const industriesSlider = [
 
 ];
 
+export const homesSection2 = [
+    {
+        text: 'Meet your the most devoted fan and business partner. Starting with profound understanding of your goals, audience and problems you solve, we deliver solutions destined to grow your project.'
+    },
+];
+
 export const advantagesData = [
     {
         id: 0,
@@ -71,7 +77,7 @@ export const advantagesData = [
     },
     {
         id: 3,
-        number: '30+',
+        number: '30k+',
         title: 'Active users',
         description: 'In web and mobile applications, aligned with clients\' goals'
     },

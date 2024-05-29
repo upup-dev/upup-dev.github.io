@@ -23,7 +23,7 @@ const Header = () => {
 
 
     return (
-        <header className={styles.header}>
+        <header className={`${styles.header} header`}>
             <div className={styles.header_wrapper}>
                 <Link className={styles.header_logo} href="/">
                     <Image src='/images/new-logo.svg' alt='UpUp' width={118} height={46} priority/>

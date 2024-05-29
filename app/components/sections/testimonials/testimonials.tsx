@@ -1,5 +1,4 @@
 import styles from "./style.module.scss";
-import {advantagesData, testimonialsData} from "@/app/data/DataHomePage";
 import Image from "next/image";
 
 const Testimonials = () => {

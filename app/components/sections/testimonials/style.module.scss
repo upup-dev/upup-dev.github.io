@@ -6,6 +6,9 @@ $border-color: rgba(255, 255, 255, .5);
   background-color: $bg-red;
   padding-top: 65px;
   overflow: hidden;
+  @media screen and (max-width: 1024px){
+    padding-bottom: 60px;
+  }
   @media screen and (max-width: 769px) {
     padding-top: 40px;
     padding-bottom: $sectionTopBot / 2;
@@ -97,8 +100,9 @@ $border-color: rgba(255, 255, 255, .5);
       width: 345px;
       border-bottom: 1px solid $border-color;
       border-left: 1px solid $border-color;
-      border-right: 1px solid $border-color;
+      //border-right: 1px solid $border-color;
       padding-left: 16px;
+      height: 100%;
     }
     &:first-of-type{
       border-bottom: 1px solid $border-color;

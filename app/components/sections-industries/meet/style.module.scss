@@ -25,6 +25,14 @@
       margin-top: 40px;
     }
   }
+  &_wrap_img{
+    overflow: hidden;
+    margin-top: -1px;
+    height: 140px;
+    @media screen and (max-width: 991px){
+      order: -1;
+    }
+  }
   &_block{
     display: flex;
     justify-content: space-between;
@@ -47,19 +55,27 @@
     @include borderTop(#DBE5FF);
     &:last-of-type{
       @include borderBottom(#DBE5FF);
-    }
-    &:hover{
-      background-color: $bg-dark;
-      @include borderTop($bg-dark);
-      .meet_block_name, .meet_block_caption{
-        color: $text-white;
-      }
-      &:last-of-type{
-        @include borderBottom($bg-dark);
+      .meet_wrap_img{
+        margin-bottom: -1px;
       }
     }
-    &_name, &_caption{
-      //transition: .3s ease;
+    @media screen and (min-width: 992px){
+      &:hover{
+        background-color: $bg-dark;
+        @include borderTop($bg-dark);
+        .meet_block_name, .meet_block_caption{
+          color: $text-white;
+        }
+        @media screen and (min-width: 992px){
+          .meet_block_img{
+            transform: scale(1.1);
+            transform-origin: center;
+          }
+        }
+        &:last-of-type{
+          @include borderBottom($bg-dark);
+        }
+      }
     }
     &_name{
       flex: 1 0 auto;
@@ -96,8 +112,13 @@
       }
     }
     &_img{
-      margin-top: -1px;
-      margin-bottom: -1px;
+      transition: transform .3s ease-in-out;
+      width: 102%;
+      height: 102%;
+      object-fit: cover;
+      @media screen and (min-width: 992px){
+
+      }
       @media screen and (max-width: 991px){
         order: -1;
       }

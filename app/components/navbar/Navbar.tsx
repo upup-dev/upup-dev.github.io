@@ -32,22 +32,43 @@ const Navbar = () => {
     const blockRef2 = useRef<HTMLDivElement>(null);
     const blockRef3 = useRef<HTMLDivElement>(null);
     const targetRef = useRef<HTMLDivElement>(null);
+    const hoverBgRef = useRef<HTMLDivElement>(null);
     const [activeBlock, setActiveBlock] = useState(1); // Стан для відстеження активного блоку
     const [height, setHeight] = useState(0);
 
     const caretDown = '/images/CaretDown.svg';
 
-    const handleMouseEnter = ({id}: { id: any }) => {
+    const handleMouseEnter = useCallback(({id}: { id: any }) => {
         setActiveBlock(id)
         setActiveMenu(id);
         setHoverMenu(true)
-    };
+        console.log('id', id)
+        const menuItem = document.getElementById(`menu-item-${id}`);
+        console.log('menuItem', `menu-item-${id}`)
+        if (menuItem && hoverBgRef.current) {
+            const rect = menuItem.getBoundingClientRect();
+            hoverBgRef.current.style.width = `${rect.width}px`;
+            hoverBgRef.current.style.height = `${rect.height}px`;
+            hoverBgRef.current.style.left = `${menuItem.offsetLeft}px`;
+            hoverBgRef.current.style.top = `${menuItem.offsetTop}px`;
+        }
+    }, [hoverMenu, hoverMenuSub]);
     const handleMouseLeave = useCallback(() => {
         setHoverMenu(false)
         if (!hoverMenu && !hoverMenuSub) {
             setActiveMenuSub(null);
             setActiveMenu(null);
         }
+        setTimeout(() => {
+            if (!hoverMenu) {
+                setActiveMenu(null);
+                if (hoverBgRef.current) {
+                    hoverBgRef.current.style.width = '0';
+                    hoverBgRef.current.style.height = '0';
+                    hoverBgRef.current.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                }
+            }
+        }, 300);
     }, [hoverMenu, hoverMenuSub]);
     const handleMouseEnterSub = () => {
         setHoverMenuSub(true)
@@ -102,6 +123,22 @@ const Navbar = () => {
         }
     }, [activeBlock]);
 
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            const hoverBg = hoverBgRef.current;
+            if (hoverBg) {
+                hoverBg.style.left = `${e.clientX - hoverBg.offsetWidth / 2}px`;
+                hoverBg.style.top = `${e.clientY - hoverBg.offsetHeight / 2}px`;
+            }
+        };
+
+        document.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
+
     return (
         <div className={styles.header_navbarWrapper}>
             <ul className={`${styles.header_navbar} ${styles.header_navbar1}`}>
@@ -109,7 +146,7 @@ const Navbar = () => {
                     <li
                         className={`${styles.header_navbarItems} ${
                             activeMenu === item.id ? styles.active : ""
-                        }`}
+                        } menu-item-${item.id}`}
                         key={item.id}
                         onMouseEnter={() => handleMouseEnter({id: item.id})}
                         onMouseLeave={handleMouseLeave}
@@ -133,6 +170,7 @@ const Navbar = () => {
                     </li>
                 ))}
             </ul>
+            <div ref={hoverBgRef} className={styles.hover_bg}></div>
             <div ref={targetRef}
                  className={`${styles.header_submenuWrapper} ${activeMenu === 0 || activeMenu === 1 || activeMenu === 2 ? styles.active : ""}`}
                  style={{height: `${height}px`}}
@@ -317,7 +355,8 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <div className={`${styles.header_submenuWrapperBg} ${activeMenu === 0 || activeMenu === 1 || activeMenu === 2 ? styles.active : ""}`}></div>
+            <div
+                className={`${styles.header_submenuWrapperBg} ${activeMenu === 0 || activeMenu === 1 || activeMenu === 2 ? styles.active : ""}`}></div>
         </div>
     )
         ;

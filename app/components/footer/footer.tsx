@@ -36,7 +36,7 @@ const Footer = () => {
                         <>
                             <div className={styles.footer_logoMob}>
                                 <Link href={'/'}>
-                                    <Image src={'/images/logo-footer.png'} alt={'upup'} height={100} width={256}/>
+                                    <Image src={'/images/new-logo-white.svg'} alt={'upup'} height={100} width={256}/>
                                 </Link>
                             </div>
                             <NavbarMob/>

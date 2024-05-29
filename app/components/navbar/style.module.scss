@@ -1,16 +1,6 @@
 @import '../../styles/mixins';
 @import '../../styles/variables';
 .header{
-
-  //&_navbarbg{
-  //  position: fixed;
-  //  width: 100vw;
-  //  height: 100vh;
-  //  background: rgba(0,0,0,.5);
-  //  z-index: 7;
-  //  left: 0;
-  //  top: 0;
-  //}
   &_submenuWrapperBg{
     position: absolute;
     width: 100vw;
@@ -41,10 +31,10 @@
     font-size: 16px;
     &Wrapper{
       display: flex;
-      gap: 51px;
+      //gap: 26px;
       margin-left: 38px;
       @media screen and (max-width: 1210px) {
-        gap: 30px;
+        //gap: 30px;
       }
     }
     li{
@@ -55,7 +45,7 @@
         gap: 10px;
         transition: color .15s ease-in-out;
         &:hover{
-          color: rgba(0, 0, 0, 0.5);
+          //color: rgba(0, 0, 0, 0.5);
         }
       }
     }
@@ -64,7 +54,7 @@
     li{
       &:first-of-type{
         a{
-          padding-left: 0;
+          //padding-left: 0;
         }
       }
       a{
@@ -78,7 +68,7 @@
     li{
       &:last-of-type{
         a{
-          padding-right: 0;
+          //padding-right: 0;
         }
       }
     }
@@ -86,6 +76,9 @@
   &_navbarItems{
     &>a{
       padding: 31px 25px;
+      &:hover{
+        background: #F5F5F5;
+      }
       @media screen and (max-width: 1210px) {
         padding: 31px 15px;
       }
@@ -95,7 +88,9 @@
       }
     }
     &.active{
+      background: #F5F5F5;
       &>a{
+        //background: #F5F5F5;
         img{
           transform: rotateX(180deg);
         }
@@ -116,7 +111,6 @@
     transition: all .2s ease-in-out;
     @include borderBottom($border-color);
     @include borderTop($border-color);
-    //border-top: 1px solid $border-color;
     &.active{
       opacity: 1;
       visibility: visible;
@@ -250,4 +244,13 @@
     color: $text-white;
     z-index: 2;
   }
+}
+.hover_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
 }

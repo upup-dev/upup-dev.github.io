@@ -24,15 +24,7 @@ li{
   list-style-type: none;
 }
 
-.font-32px{
-  font-size: 32px;
-}
-.font-18px{
-  font-size: 18px;
-}
-.font-14px{
-  font-size: 14px;
-}
+
 .loading{
   background-color: #FF602E;
   width: 100vw;
@@ -209,9 +201,6 @@ li{
     .mob-menu_title{
       color: $text-white;
       font-family: 'HelveticaNeueCyr-Roman', sans-serif;
-    }
-    .mob-menu_content{
-
     }
   }
   .mob-menu_trigger, .mob-menu_content, .navbar_mob{

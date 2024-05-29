@@ -115,7 +115,7 @@ export const industriesTeem = [
     },
     {
         id: 2,
-        name: 'Lihinov Oleksandr',
+        name: 'Lohinov Oleksandr',
         caption: 'React/Redux engineer, with 3 years of experience in creating fast, responsive, and durable web projects',
         imageUrl: '/images/industries/avatar3.png',
     },

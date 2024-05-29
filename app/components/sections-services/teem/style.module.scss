@@ -1,0 +1,26 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.teem{
+  background: url("/images/services/teem-pic.jpg") center center no-repeat;
+  //filter: grayscale(70%);
+  background-size: cover;
+  height: 542px;
+  overflow: hidden;
+  position: relative;
+  @media screen and (max-width: 769px) {
+    height: 476px;
+  }
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #C3CFED;
+    mix-blend-mode: color;
+    z-index: 1;
+    left: 0;
+    top: 0;
+  }
+}
